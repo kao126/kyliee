@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import styles from 'src/styles/Home.module.css'
 
 // components
-import { Header } from '../components/common/header'
-import { Footer } from '../components/common/footer'
+import { Header } from 'src/components/common/header'
+import { Footer } from 'src/components/common/footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,10 +13,10 @@ const inter = Inter({ subsets: ['latin'] })
 export default function About() {
   return (
     <>
-      <Header />
       <Head>
         <title>About</title>
       </Head>
+      <Header />
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
