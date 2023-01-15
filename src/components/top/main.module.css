@@ -1,7 +1,11 @@
 .main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  max-width: 1840px;
+  width: 100%;
+  padding: 0 100px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* padding: 6rem; */
+  /* min-height: 100vh; */
 }
