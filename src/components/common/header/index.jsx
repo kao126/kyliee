@@ -3,16 +3,15 @@ import Image from "next/image";
 // style
 import styles from "src/components/common/header/header.module.css";
 
-import Logo from "public/images/kyliee.png"
+import Logo from "public/images/kyliee.png";
 
-export function Header() {
+export function Header({ isActive }) {
+  const isDisplay = isActive ? styles.is_display : styles.is_not_display;
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isDisplay}`}>
       <div className={styles.logo}>
-        <Image 
-          src={Logo}
-          height={70}
-        />
+        <Image src={Logo} height={70} />
       </div>
       <ul className={styles.ul}>
         <li className={styles.li}>About</li>
@@ -21,5 +20,5 @@ export function Header() {
         <li className={styles.li}>Menu</li>
       </ul>
     </header>
-  )
+  );
 }
