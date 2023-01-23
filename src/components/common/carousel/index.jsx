@@ -12,10 +12,13 @@ import "swiper/css/scrollbar";
 import Image1 from "public/images/test1.jpg";
 import Image2 from "public/images/test2.jpg";
 import Image3 from "public/images/test3.jpg";
+import { useHeaderScroll } from "src/hooks/useHeaderScroll";
 
 const images = [Image1, Image2, Image3];
 
 export function Carousel() {
+  const { ref } = useHeaderScroll();
+
   return (
     <Swiper
       modules={[Pagination, Scrollbar, Autoplay]}
@@ -41,6 +44,7 @@ export function Carousel() {
               height={780}
               object-fit="cover"
               aria-hidden="true"
+              ref={ref}
             />
           </SwiperSlide>
         );

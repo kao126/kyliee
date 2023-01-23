@@ -7,7 +7,7 @@ import { Main } from "src/components/top/main";
 import { Footer } from "src/components/common/footer";
 
 // hooks
-import { ref, useHeaderScroll } from "src/hooks/useHeaderScroll";
+import { useHeaderScroll } from "src/hooks/useHeaderScroll";
 
 // styles
 import styles from "src/styles/Home.module.css";
@@ -20,7 +20,7 @@ export default function Home() {
       <Head>
         <title>Top</title>
       </Head>
-      <Header isActive={isHeaderActive} ref={ref} />
+      <Header isActive={isHeaderActive} />
       <Main />
       <Footer />
     </>
