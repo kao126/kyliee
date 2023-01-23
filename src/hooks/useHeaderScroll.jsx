@@ -7,16 +7,15 @@ export const useHeaderScroll = () => {
 
   useEffect(() => {
     if (ref.current) {
-      const clientHeight = ref?.current.clientHeight;
-      console.log(clientHeight);
-      setImageHeight(clientHeight);
+      const topImageHeight = ref?.current.clientHeight;
+      setImageHeight(topImageHeight);
     }
   }, [ref]);
 
   useEffect(() => {
     const scrollWindow = () => {
       const scroll = window.scrollY;
-      if (imageHeight <= scroll) {
+      if (900 <= scroll) {
         setIsHeaderActive(true);
       } else {
         setIsHeaderActive(false);
@@ -26,7 +25,7 @@ export const useHeaderScroll = () => {
     return () => {
       window.removeEventListener("scroll", scrollWindow);
     };
-  }, [imageHeight]);
+  }, []);
 
   return { ref, isHeaderActive };
 };
