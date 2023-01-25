@@ -1,0 +1,7 @@
+.contents_wrapper {
+  display: flex;
+}
+
+.contents_description {
+  width: 100%;
+}
