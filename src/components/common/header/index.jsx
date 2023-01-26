@@ -11,7 +11,7 @@ export function Header({ isActive }) {
   return (
     <header className={`${styles.header} ${isDisplay}`}>
       <div className={styles.logo}>
-        <Image src={Logo} height={70} />
+        <Image src={Logo} alt="logo" height={70} />
       </div>
       <ul className={styles.ul}>
         <li className={styles.li}>About</li>
