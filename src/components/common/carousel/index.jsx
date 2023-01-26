@@ -43,7 +43,7 @@ export function Carousel() {
       {images.map((image, i) => {
         return (
           <SwiperSlide key={i}>
-            <Image src={image} alt="test_image" ref={ref} className={styles.image} />
+            <Image src={image} alt={`画像${i}`} ref={ref} className={styles.image} />
           </SwiperSlide>
         );
       })}
