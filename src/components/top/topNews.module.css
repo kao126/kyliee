@@ -1,7 +1,10 @@
+.top_news_wrapper {
+  margin: 250px 0 150px;
+}
 .title_wrapper {
   display: flex;
   margin-top: 30px;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 3px solid #ccc;
   justify-content: space-between;
 }
 
@@ -12,4 +15,9 @@
 .contents_wrapper {
   width: 90%;
   margin: 0 auto;
+  padding-top: 20px;
+}
+
+.contents_wrapper > li {
+  margin-bottom: 10px;
 }
