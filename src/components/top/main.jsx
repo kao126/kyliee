@@ -8,10 +8,12 @@ import styles from "src/components/top/main.module.css";
 
 export function Main() {
   return (
-    <main className={styles.main}>
+    <main>
       <Carousel />
-      <TopNews />
-      <TopContents />
+      <div className={styles.main}>
+        <TopNews />
+        <TopContents />
+      </div>
     </main>
   );
 }

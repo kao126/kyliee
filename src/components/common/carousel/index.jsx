@@ -1,4 +1,10 @@
+// Next.js
 import Image from "next/image";
+
+// hooks
+import { useHeaderScroll } from "src/hooks/useHeaderScroll";
+
+// Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Scrollbar, Autoplay } from "swiper";
@@ -9,12 +15,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+// // style
+import styles from "src/components/common/carousel/carousel.module.css";
 import Image1 from "public/images/test1.jpg";
 import Image2 from "public/images/test2.jpg";
 import Image3 from "public/images/test3.jpg";
-import { useHeaderScroll } from "src/hooks/useHeaderScroll";
+import Image4 from "public/images/test4.jpg";
+import Image5 from "public/images/test5.jpg";
+import Image6 from "public/images/test6.jpg";
+import Image7 from "public/images/test7.jpg";
 
-const images = [Image1, Image2, Image3];
+const images = [Image1, Image2, Image3, Image4, Image5, Image6, Image7];
 
 export function Carousel() {
   const { ref } = useHeaderScroll();
@@ -22,8 +33,6 @@ export function Carousel() {
   return (
     <Swiper
       modules={[Pagination, Scrollbar, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       autoplay={{
@@ -34,18 +43,7 @@ export function Carousel() {
       {images.map((image, i) => {
         return (
           <SwiperSlide key={i}>
-            <Image
-              src={image}
-              alt="test_image"
-              sizes="(max-width: 768px) 100vw,
-                (max-width: 425px) 100vw,
-                100vw"
-              width={1480}
-              height={780}
-              object-fit="cover"
-              aria-hidden="true"
-              ref={ref}
-            />
+            <Image src={image} alt="test_image" ref={ref} className={styles.image} />
           </SwiperSlide>
         );
       })}
