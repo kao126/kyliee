@@ -33,4 +33,5 @@
 .li {
   width: 25%;
   list-style: none;
+  align-self: center;
 }
