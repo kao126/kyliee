@@ -4,10 +4,11 @@ import Head from "next/head";
 // style
 import "../styles/globals.css";
 
-import { ThemeProvider } from "@mui/material";
-import { theme } from "../theme";
-import createEmotionCache from "../createEmotionCache";
+import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "src/theme";
+import createEmotionCache from "src/createEmotionCache";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -21,6 +22,7 @@ export default function App({ Component, emotionCache = clientSideEmotionCache, 
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>
