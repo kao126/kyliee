@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export function SideDrawer({ open, handleDrawer }) {
-  const drawerWidth = 240;
+  const drawerWidth = 300;
 
   return (
     <Drawer
