@@ -20,6 +20,21 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    red: {
+      50: red[50],
+      100: red[100],
+      200: red[200],
+      300: red[300],
+      400: red[400],
+      600: red[600],
+      700: red[700],
+      800: red[800],
+      900: red[900],
+      A100: red.A100,
+      A200: red.A200,
+      A400: red.A400,
+      A700: red.A700,
+    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
