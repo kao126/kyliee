@@ -3,9 +3,9 @@ import Image from "next/image";
 // style
 import styles from "src/components/top/topContents.module.css";
 
-import Image1 from "public/images/test1.jpg";
-import Image2 from "public/images/test2.jpg";
-import Image3 from "public/images/test3.jpg";
+import Image1 from 'public/images/TOP_01.webp';
+import Image2 from 'public/images/TOP_02.jpg';
+import Image3 from 'public/images/TOP_03.webp';
 
 const images = [Image1, Image2, Image3];
 
