@@ -3,7 +3,7 @@ import styles from "src/components/top/topNews.module.css";
 
 export function TopNews() {
   return (
-    <div className={styles.top_news_wrapper}>
+    <div  id="news" className={styles.top_news_wrapper}>
       <div className={styles.title_wrapper}>
         <div></div>
         <h1>News</h1>
