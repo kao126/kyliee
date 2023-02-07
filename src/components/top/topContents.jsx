@@ -1,7 +1,7 @@
 // Next.js
-import Image from "next/image";
+import Image from 'next/image';
 // style
-import styles from "src/components/top/topContents.module.css";
+import styled from '@emotion/styled';
 
 import Image1 from 'public/images/TOP_01.webp';
 import Image2 from 'public/images/TOP_02.jpg';
@@ -15,20 +15,29 @@ export function TopContents() {
       {images.map((image, i) => {
         if (i % 2 === 0) {
           return (
-            <div className={styles.contents_wrapper} key={i}>
-              <Image src={image} alt="test_image" width={600} height={450} object-fit="cover" aria-hidden="true" />
-              <div className={styles.contents_description}>あああ</div>
-            </div>
+            <StyledWrapper key={i}>
+              <Image src={image} alt={`画像${i}`} width={600} height={450} object-fit='cover' aria-hidden='true' />
+              <div className='contents_description'>あああ</div>
+            </StyledWrapper>
           );
         } else {
           return (
-            <div className={styles.contents_wrapper} key={i}>
-              <div className={styles.contents_description}>あああ</div>
-              <Image src={image} alt={`画像${i}`} width={600} height={450} object-fit="cover" aria-hidden="true" />
-            </div>
+            <StyledWrapper key={i}>
+              <div className='contents_description'>あああ</div>
+              <Image src={image} alt={`画像${i}`} width={600} height={450} object-fit='cover' aria-hidden='true' />
+            </StyledWrapper>
           );
         }
       })}
     </>
   );
 }
+
+const StyledWrapper = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  .contents_description {
+    width: 50%;
+  }
+`;
