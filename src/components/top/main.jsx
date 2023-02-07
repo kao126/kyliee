@@ -1,21 +1,33 @@
 // components
-import { Carousel } from "src/components/common/carousel";
-import { TopNews } from "src/components/top/topNews";
-import { TopContents } from "src/components/top/topContents";
-import { TopColor } from "src/components/top/topColor";
+import {Carousel} from 'src/components/common/carousel';
+import {TopNews} from 'src/components/top/topNews';
+import {TopContents} from 'src/components/top/topContents';
+import {TopColor} from 'src/components/top/topColor';
 
 // style
-import styles from "src/components/top/main.module.css";
+import styled from '@emotion/styled';
+import theme from 'src/theme';
 
 export function Main() {
   return (
-    <main>
+    <StyledMain>
       <Carousel />
-      <div className={styles.main}>
+      <StyledContainer>
         <TopNews />
         <TopContents />
         <TopColor />
-      </div>
-    </main>
+      </StyledContainer>
+    </StyledMain>
   );
 }
+
+const StyledMain = styled('main')`
+  background-color: ${theme.palette.background.main};
+`;
+
+const StyledContainer = styled('div')`
+  max-width: 1840px;
+  width: 100%;
+  padding: 0 100px;
+  height: 2500px;
+`;
