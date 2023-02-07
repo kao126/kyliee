@@ -48,10 +48,7 @@ export function Carousel() {
 }
 
 const StyledImage = styled(Image)`
-  .image {
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
-    aspect-ratio: auto;
-  }
+  height: 100vh;
+  object-fit: cover;
+  aspect-ratio: auto;
 `;
