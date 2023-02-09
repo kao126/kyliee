@@ -15,7 +15,7 @@ export const useHeaderScroll = () => {
   useEffect(() => {
     const scrollWindow = () => {
       const scroll = window.scrollY;
-      if (1000 <= scroll) {
+      if (500 <= scroll) {
         setIsHeaderActive(true);
       } else {
         setIsHeaderActive(false);
