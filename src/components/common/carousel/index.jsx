@@ -50,5 +50,14 @@ export function Carousel() {
 const StyledImage = styled(Image)`
   height: 100vh;
   object-fit: cover;
-  aspect-ratio: auto;
+  object-position: top;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    object-position: center;
+  }
+  @media screen and (max-width: 425px) {
+    height: 100vh;
+    object-position: right -280px top 0px;
+  }
 `;
