@@ -28,6 +28,6 @@ const StyledMain = styled('main')`
 const StyledContainer = styled('div')`
   max-width: 1840px;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 10%;
   height: 2500px;
 `;
