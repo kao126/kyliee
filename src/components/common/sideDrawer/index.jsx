@@ -11,7 +11,7 @@ export function SideDrawer({open, handleDrawer}) {
     <StyledDrawer anchor='right' onClose={handleDrawer} open={open}>
       {/* <DrawerHeader> */}
       <StyledList>
-        <div>aaa</div>
+        <div><Link href={'/'}>Top</Link></div>
         <div><Link href={'/about'}>About</Link></div>
         <div><Link href={'/concept'}>Concept</Link></div>
         <div>aaa</div>
