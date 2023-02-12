@@ -8,6 +8,9 @@ import Link from 'next/link';
 // components
 import {SideDrawer} from 'src/components/common/sideDrawer';
 
+// Hooks
+import { useSideDrawer } from 'src/hooks/useSideDrawer';
+
 // style
 import styles from 'src/components/common/header/header.module.css';
 import Logo from 'public/images/kyliee.png';
@@ -18,10 +21,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export function Header({isActive}) {
   const isDisplay = isActive ? styles.is_display : styles.is_not_display;
-  const [open, setOpen] = useState(false);
-  const handleDrawer = () => {
-    setOpen(!open);
-  };
+  const {open, handleDrawer} = useSideDrawer();
 
   return (
     <>
