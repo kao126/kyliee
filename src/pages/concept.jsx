@@ -29,12 +29,13 @@ export default function Concept() {
       <StyledMain>
         <StyledImage src={conceptImage} alt='concept-image' />
         <div>
-          <div className='description'>
-            <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
+          <div className='contents'>
+            <StyledIconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
               <MenuIcon fontSize='large' />
-            </IconButton>
-            <h2>Concept</h2>
-            <p>aaa</p>
+            </StyledIconButton>
+            <h1 className='title'>Concept</h1>
+            <p className='description'>ここは、大嶋捷稔（おおしま かなる）の世界観を表現したポートフォリオです。</p>
+            <p className='description'>Welcome to my Portfolio produced by Kanaru Oshima </p>
             <Footer />
           </div>
         </div>
@@ -46,14 +47,22 @@ export default function Concept() {
 
 const StyledMain = styled('main')`
   display: flex;
+  background-color: #000;
   > div {
-    background-color: #000;
     width: 50%;
-    .description {
+    align-self: center;
+    .contents {
       color: #fff;
       width: 77%;
       margin: 0 auto;
       text-align: center;
+    }
+    .title {
+      padding-bottom: 7rem;
+      margin-bottom: 8rem;
+    }
+    .description {
+      margin: 0;
     }
   }
 `;
@@ -63,3 +72,9 @@ const StyledImage = styled(Image)`
   height: 100vh;
   object-fit: cover;
 `;
+
+const StyledIconButton = styled(IconButton)`
+  position: fixed;
+  right: 0;
+  top: 0;
+`
