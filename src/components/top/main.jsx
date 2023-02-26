@@ -15,8 +15,8 @@ export function Main() {
       <StyledContainer>
         <TopNews />
         <TopContents />
-        <TopColor />
       </StyledContainer>
+      <TopColor />
     </StyledMain>
   );
 }
@@ -29,5 +29,4 @@ const StyledContainer = styled('div')`
   max-width: 1840px;
   width: 100%;
   padding: 0 10%;
-  height: 2500px;
 `;
