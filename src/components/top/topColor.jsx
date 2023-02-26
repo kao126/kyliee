@@ -10,6 +10,8 @@ import {Card} from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import {red, indigo} from '@mui/material/colors';
 
+import topColorImg from 'public/images/TOP_COLOR_01.jpg';
+
 const red_050 = red[50];
 const red_400 = red[400];
 
@@ -19,71 +21,46 @@ const indigo_400 = indigo[400];
 export function TopColor() {
   return (
     <StyledWrapper>
-      <h1 className='title'>topColor</h1>
-      <h4 className='description'>トップカラーの説明</h4>
+      <Image src={topColorImg} className='img' />
       <div className='color_wrapper'>
-        <StyledCard red='true'>
-          <GitHubIcon sx={{fontSize: 80}} />
-          <div>
-            <div className='subtitle'>Red</div>
-            <StyledLink href={'https://github.com/kao126'} red='true'>
-              Git Hubへ
-            </StyledLink>
-          </div>
-        </StyledCard>
-        <StyledCard>
-          <GitHubIcon sx={{fontSize: 80}} />
-          <div>
-            <div className='subtitle'>Blue</div>
-            <StyledLink href={'https://github.com/kao126'}>
-              Git Hubへ
-            </StyledLink>
-          </div>
-        </StyledCard>
+        <h1 className='title'>大切な人への贈り物に、 Mr. CHEESECAKE を。</h1>
+        <h4 className='description'>シーンや贈る相手に合わせて、様々なギフトの形をご用意しております。</h4>
+        <StyledLink href={'https://github.com/kao126'}>Mr. CHEESECAKE Gift Collections</StyledLink>
       </div>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled('div')`
-  .title {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50%);
+  background-color: #fff;
+  width: 100%;
+  align-items: center;
+  .img {
+    width: 100%;
+    height: auto;
+  }
+  .color_wrapper {
     text-align: center;
+    max-width: 500px;
+    padding: 0 40px 0 75px;
+  }
+  .title {
     border-bottom: 3px solid #ccc;
     margin-bottom: 1rem;
   }
   .description {
-    text-align: center;
     margin-bottom: 2rem;
-  }
-  .color_wrapper {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
   }
   .subtitle {
     margin-bottom: 1rem;
   }
 `;
 
-const StyledCard = styled(Card)`
-  width: 40%;
-  height: 240px;
-  border-radius: 15px;
-  /* border-radius: 50% 20% / 10% 40%; */
-  /* background-color: ${({red}) => (red ? red_050 : indigo_050)}; */
-  border: 1.5px solid ${({red}) => (red ? red_400 : indigo_400)};
-  font-size: 18px;
-  color: ${({red}) => (red ? red_400 : indigo_400)};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const StyledLink = styled(Link)`
-  background-color: ${({red}) => (red ? red_400 : indigo_400)};
-  border-radius: 50px;
-  padding: 10px 20px;
-  color: #fff;
+  border: 1px solid rgba(37, 42, 44, 0.16);
+  border-radius: 2px;
+  padding: 15px 40px 15px 24px;
+  letter-spacing: 0.03rem;
 `;
