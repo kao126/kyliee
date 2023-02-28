@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 // Material-Ui
 import {Card} from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {red, indigo} from '@mui/material/colors';
 
 import topColorImg from 'public/images/TOP_COLOR_01.jpg';
@@ -23,9 +24,12 @@ export function TopColor() {
     <StyledWrapper>
       <Image src={topColorImg} className='img' />
       <div className='color_wrapper'>
-        <h1 className='title'>大切な人への贈り物に、 Mr. CHEESECAKE を。</h1>
-        <h4 className='description'>シーンや贈る相手に合わせて、様々なギフトの形をご用意しております。</h4>
-        <StyledLink href={'https://github.com/kao126'}>Mr. CHEESECAKE Gift Collections</StyledLink>
+        <h1 className='title'>楽しい色の世界へようこそ</h1>
+        <h4 className='description'>ご利用のシーンに合わせて、様々な配色をご用意しております。</h4>
+        <StyledLink href={'https://github.com/kao126'}>
+          <span>Kyliee's Color-Palette Collections</span>
+          <KeyboardArrowRightIcon />
+        </StyledLink>
       </div>
     </StyledWrapper>
   );
@@ -42,12 +46,10 @@ const StyledWrapper = styled('div')`
     height: auto;
   }
   .color_wrapper {
-    text-align: center;
     max-width: 500px;
     padding: 0 40px 0 75px;
   }
   .title {
-    border-bottom: 3px solid #ccc;
     margin-bottom: 1rem;
   }
   .description {
@@ -59,8 +61,11 @@ const StyledWrapper = styled('div')`
 `;
 
 const StyledLink = styled(Link)`
+  display: flex;
+  justify-content: space-between;
   border: 1px solid rgba(37, 42, 44, 0.16);
   border-radius: 2px;
-  padding: 15px 40px 15px 24px;
+  padding: 15px 15px 15px 24px;
+  margin-right: 55px;
   letter-spacing: 0.03rem;
 `;
