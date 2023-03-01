@@ -6,18 +6,9 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 
 // Material-Ui
-import {Card} from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import {red, indigo} from '@mui/material/colors';
 
 import topColorImg from 'public/images/TOP_COLOR_01.jpg';
-
-const red_050 = red[50];
-const red_400 = red[400];
-
-const indigo_050 = indigo[50];
-const indigo_400 = indigo[400];
 
 export function TopColor() {
   return (
@@ -26,7 +17,7 @@ export function TopColor() {
       <div className='color_wrapper'>
         <h1 className='title'>楽しい色の世界へようこそ</h1>
         <h4 className='description'>ご利用のシーンに合わせて、様々な配色をご用意しております。</h4>
-        <StyledLink href={'https://github.com/kao126'}>
+        <StyledLink href={'/colors'}>
           <span>Kyliee's Color-Palette Collections</span>
           <KeyboardArrowRightIcon />
         </StyledLink>
@@ -67,5 +58,10 @@ const StyledLink = styled(Link)`
   border-radius: 2px;
   padding: 15px 15px 15px 24px;
   margin-right: 55px;
+  color: #000;
   letter-spacing: 0.03rem;
+  text-decoration: none;
+  :hover {
+    opacity: 0.7;
+  }
 `;
