@@ -11,6 +11,9 @@ import {Header} from 'src/components/common/header';
 import {Footer} from 'src/components/common/footer';
 import styled from '@emotion/styled';
 
+// material-ui
+import { Box, TextField } from '@mui/material';
+
 const inter = Inter({subsets: ['latin']});
 
 export default function Colors() {
@@ -21,10 +24,21 @@ export default function Colors() {
       </Head>
       <Header />
       <StyledMain>
-        aaaa
+        <h2>Color Palette</h2>
+
+        <TextField id='standard-basic' label='color 1' variant='standard' />
+        <TextField id='standard-basic' label='color 2' variant='standard' />
+
+        <Box className="color-palette"></Box>
       </StyledMain>
     </>
   );
 }
 
-const StyledMain = styled('main')``;
+const StyledMain = styled('main')`
+.color-palette {
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+}
+`;
