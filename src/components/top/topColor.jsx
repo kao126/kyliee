@@ -13,12 +13,12 @@ import topColorImg from 'public/images/TOP_COLOR_01.jpg';
 export function TopColor() {
   return (
     <StyledWrapper>
-      <Image src={topColorImg} className='img' alt="color-palette" />
+      <Image src={topColorImg} className='img' alt='color-palette' />
       <div className='color_wrapper'>
         <h1 className='title'>楽しい色の世界へようこそ</h1>
         <h4 className='description'>ご利用のシーンに合わせて、様々な配色をご用意しております。</h4>
         <StyledLink href={'/colors'}>
-          <span>Kyliee's Color-Palette Collections</span>
+          <span>Kyliee&apos;s Color-Palette Collections</span>
           <KeyboardArrowRightIcon />
         </StyledLink>
       </div>
