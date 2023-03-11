@@ -18,7 +18,8 @@ import ColorModal from 'src/components/common/colorModal';
 const inter = Inter({subsets: ['latin']});
 
 export default function Colors() {
-  const [firstColor, setFirstColor] = useState('#fff');
+  const [firstColor, setFirstColor] = useState('#abcd06');
+  const [firstColors, setFirstColors] = useState(null);
   const [secondColor, setSecondColor] = useState('#fff');
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
@@ -36,6 +37,14 @@ export default function Colors() {
   const handleSecondPicker = () => {
     setSecondPicker((prevPicker) => !prevPicker);
   };
+
+  const hashtag = firstColor.slice(0, 1);
+  const red = firstColor.slice(1, 3);
+  const green = firstColor.slice(3, 5);
+  const blue = firstColor.slice(5, 7);
+  const hex = hashtag + red + green + blue;
+  console.log(hex);
+
   return (
     <>
       <Head>
@@ -44,28 +53,58 @@ export default function Colors() {
       <Header />
       <StyledMain>
         <h2>Color Palette</h2>
-        <TextField id='standard-basic' label='color 1' variant='standard' value={firstColor} onClick={handleFirstPicker} />
-        <TextField id='standard-basic' label='color 2' variant='standard' value={secondColor} onClick={handleSecondPicker} />
-        <Grid container>
-          <Grid item>
-            <Box
-              className='color-palette'
-              style={{
-                backgroundColor: firstColor,
-              }}
-            ></Box>
-            {firstColor}
+        <Grid container className='text-container'>
+          <Grid item xs={2} className='text-field'>
+            <TextField id='standard-basic' label='color 1' variant='standard' value={firstColor} onClick={handleFirstPicker} />
           </Grid>
-          <Grid item>
-            <Box
-              className='color-palette'
-              style={{
-                backgroundColor: secondColor,
-              }}
-            ></Box>
-            {secondColor}
+          <Grid item xs={2} className='text-field'>
+            <TextField id='standard-basic' label='color 2' variant='standard' value={secondColor} onClick={handleSecondPicker} />
           </Grid>
         </Grid>
+        <Grid container className='palette-container'>
+          <Grid item xs={2}>
+            <Grid item>
+              <Box
+                className='color-palette'
+                style={{
+                  backgroundColor: firstColor,
+                }}
+              />
+            </Grid>
+            <Grid item>
+              <Box
+                className='color-palette'
+                style={{
+                  backgroundColor: firstColor,
+                }}
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs={2}>
+            <Grid item xs={12}>
+              <Box
+                className='color-palette'
+                style={{
+                  backgroundColor: secondColor,
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Box
+                className='color-palette'
+                style={{
+                  backgroundColor: secondColor,
+                }}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+        {/* <Box className='palette-container'>
+          <Grid container>
+            <Grid item>{firstColor}</Grid>
+            <Grid item>{secondColor}</Grid>
+          </Grid>
+        </Box> */}
       </StyledMain>
       <ColorModal open={firstPicker} onClose={handleFirstPicker} color={firstColor} onChange={handleFirstChange} title={'Color1'} />
       <ColorModal open={secondPicker} onClose={handleSecondPicker} color={secondColor} onChange={handleSecondChange} title={'Color2'} />
@@ -74,8 +113,20 @@ export default function Colors() {
 }
 
 const StyledMain = styled('main')`
+  .text-container {
+    padding: 10px;
+  }
+  .text-field {
+    text-align: center;
+    width: 90%;
+  }
   .color-palette {
-    width: 80px;
+    width: 90%;
     height: 80px;
+    margin: 0 auto;
+  }
+  .palette-container {
+    background-color: #eaeaea;
+    padding: 10px;
   }
 `;
