@@ -13,6 +13,7 @@ import {Footer} from 'src/components/common/footer';
 
 // material-ui
 import {Box, Grid, Modal, TextField} from '@mui/material';
+import ColorModal from 'src/components/common/colorModal';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -45,18 +46,6 @@ export default function Colors() {
         <h2>Color Palette</h2>
         <TextField id='standard-basic' label='color 1' variant='standard' value={firstColor} onClick={handleFirstPicker} />
         <TextField id='standard-basic' label='color 2' variant='standard' value={secondColor} onClick={handleSecondPicker} />
-        <Modal open={firstPicker} onClose={handleFirstPicker}>
-          <div>
-            <h4>Color1</h4>
-            <SketchPicker color={firstColor} onChange={handleFirstChange} />
-          </div>
-        </Modal>
-        <Modal open={secondPicker} onClose={handleSecondPicker}>
-          <div>
-            <h4>Color2</h4>
-            <SketchPicker color={secondColor} onChange={handleSecondChange} />{' '}
-          </div>
-        </Modal>
         <Grid container>
           <Grid item>
             <Box
@@ -78,6 +67,8 @@ export default function Colors() {
           </Grid>
         </Grid>
       </StyledMain>
+      <ColorModal open={firstPicker} onClose={handleFirstPicker} color={firstColor} onChange={handleFirstChange} title={'Color1'} />
+      <ColorModal open={secondPicker} onClose={handleSecondPicker} color={secondColor} onChange={handleSecondChange} title={'Color2'} />
     </>
   );
 }
