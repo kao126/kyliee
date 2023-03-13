@@ -1,21 +1,20 @@
-import React, {useState} from 'react';
-import {SketchPicker} from 'react-color';
+import React, { useState } from 'react';
 import Head from 'next/head';
-import {Inter} from '@next/font/google';
+import { Inter } from '@next/font/google';
 
 // style
 import styled from '@emotion/styled';
 import theme from 'src/theme';
 
 // components
-import {Header} from 'src/components/common/header';
-import {Footer} from 'src/components/common/footer';
+import { Header } from 'src/components/common/header';
+import { ColorModal } from 'src/components/common/colorModal';
+import { Footer } from 'src/components/common/footer';
 
 // material-ui
-import {Box, Grid, Modal, TextField} from '@mui/material';
-import ColorModal from 'src/components/common/colorModal';
+import { Box, Grid, TextField } from '@mui/material';
 
-const inter = Inter({subsets: ['latin']});
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Colors() {
   const [firstColor, setFirstColor] = useState('#abcd06');
@@ -24,9 +23,19 @@ export default function Colors() {
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
 
+  // const handleFirstChange = (color) => {
+  //   setFirstColor(color.hex);
+  // };
+  // Alpha値を16進数に変換する処理
+  const decimalToHex = (alpha) => (alpha === 0 ? '00' : Math.round(255 * alpha).toString(16));
+
   const handleFirstChange = (color) => {
-    setFirstColor(color.hex);
+    // "ff0500" + "80"の形式になるように
+    const hexCode = `${color.hex}${decimalToHex(color.rgb.a || 0)}`;
+    setFirstColor(hexCode);
   };
+
+
   const handleSecondChange = (color) => {
     setSecondColor(color.hex);
   };
@@ -39,11 +48,16 @@ export default function Colors() {
   };
 
   const hashtag = firstColor.slice(0, 1);
-  const red = firstColor.slice(1, 3);
-  const green = firstColor.slice(3, 5);
-  const blue = firstColor.slice(5, 7);
-  const hex = hashtag + red + green + blue;
-  console.log(hex);
+  const hexRed = firstColor.slice(1, 3);
+  const hexGreen = firstColor.slice(3, 5);
+  const hexBlue = firstColor.slice(5, 7);
+  const hex = hashtag + hexRed + hexGreen + hexBlue;
+
+  const rgbaRed = parseInt(hexRed, 16);
+  const rgbaGreen = parseInt(hexGreen, 16);
+  const rgbaBlue = parseInt(hexBlue, 16);
+
+
 
   return (
     <>
