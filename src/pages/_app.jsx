@@ -5,14 +5,14 @@ import Head from 'next/head';
 // import "../styles/globals.css";
 
 import CssBaseline from '@mui/material/CssBaseline';
-import {CacheProvider} from '@emotion/react';
-import {ThemeProvider} from '@mui/material/styles';
+import { CacheProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
 import theme from 'src/theme';
 import createEmotionCache from 'src/createEmotionCache';
 
 const clientSideEmotionCache = createEmotionCache();
 
-export default function App({Component, emotionCache = clientSideEmotionCache, pageProps}) {
+export default function App({ Component, emotionCache = clientSideEmotionCache, pageProps }) {
   return (
     <>
       <Head>

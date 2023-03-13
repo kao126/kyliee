@@ -1,9 +1,7 @@
-import { Inter } from '@next/font/google'
+import { Inter } from '@next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export function Footer() {
-  return (
-    <footer>Footer</footer>
-    )
+  return <footer>Footer</footer>;
 }
