@@ -1,9 +1,9 @@
 import React from 'react';
-import {SketchPicker} from 'react-color';
+import { SketchPicker } from 'react-color';
 import styled from '@emotion/styled';
-import {Modal} from '@mui/material';
+import { Modal } from '@mui/material';
 
-const ColorModal = ({open, onClose, color, onChange, title}) => {
+export function ColorModal({ open, onClose, color, onChange, title }) {
   return (
     <StyledModal open={open} onClose={onClose}>
       <div className='picker-contents'>
@@ -12,7 +12,7 @@ const ColorModal = ({open, onClose, color, onChange, title}) => {
       </div>
     </StyledModal>
   );
-};
+}
 
 const StyledModal = styled(Modal)`
   .picker-contents {
@@ -20,5 +20,3 @@ const StyledModal = styled(Modal)`
     margin: 0 auto;
   }
 `;
-
-export default ColorModal;
