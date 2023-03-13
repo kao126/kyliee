@@ -1,8 +1,8 @@
 // components
-import {Carousel} from 'src/components/common/carousel';
-import {TopNews} from 'src/components/top/topNews';
-import {TopContents} from 'src/components/top/topContents';
-import {TopColor} from 'src/components/top/topColor';
+import { Carousel } from 'src/components/common/carousel';
+import { TopNews } from 'src/components/top/topNews';
+import { TopContents } from 'src/components/top/topContents';
+import { TopColor } from 'src/components/top/topColor';
 
 // style
 import styled from '@emotion/styled';

@@ -3,17 +3,23 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import styled from '@emotion/styled';
-import {List} from '@mui/material';
+import { List } from '@mui/material';
 import Link from 'next/link';
 
-export function SideDrawer({open, handleDrawer}) {
+export function SideDrawer({ open, handleDrawer }) {
   return (
     <StyledDrawer anchor='right' onClose={handleDrawer} open={open}>
       {/* <DrawerHeader> */}
       <StyledList>
-        <div><Link href={'/'}>Top</Link></div>
-        <div><Link href={'/about'}>About</Link></div>
-        <div><Link href={'/concept'}>Concept</Link></div>
+        <div>
+          <Link href={'/'}>Top</Link>
+        </div>
+        <div>
+          <Link href={'/about'}>About</Link>
+        </div>
+        <div>
+          <Link href={'/concept'}>Concept</Link>
+        </div>
         <div>aaa</div>
       </StyledList>
       {/* </DrawerHeader> */}

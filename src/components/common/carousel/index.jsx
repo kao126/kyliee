@@ -2,12 +2,12 @@
 import Image from 'next/image';
 
 // hooks
-import {useHeaderScroll} from 'src/hooks/useHeaderScroll';
+import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
 
 // Swiper
 // import Swiper core and required modules
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Pagination, Scrollbar, Autoplay} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Scrollbar, Autoplay } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,13 +24,13 @@ import Image3 from 'public/images/TOP_03.webp';
 const images = [Image1, Image2, Image3];
 
 export function Carousel() {
-  const {ref} = useHeaderScroll();
+  const { ref } = useHeaderScroll();
 
   return (
     <Swiper
       modules={[Pagination, Scrollbar, Autoplay]}
-      pagination={{clickable: true}}
-      scrollbar={{draggable: true}}
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
       autoplay={{
         delay: 4000,
       }}

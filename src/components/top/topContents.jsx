@@ -8,9 +8,9 @@ import Image2 from 'public/images/TOP_02.jpg';
 import Image3 from 'public/images/TOP_03.webp';
 
 const contents = [
-  {image: Image1, description: 'あああ'},
-  {image: Image2, description: 'いいい'},
-  {image: Image3, description: 'ううう'},
+  { image: Image1, description: 'あああ' },
+  { image: Image2, description: 'いいい' },
+  { image: Image3, description: 'ううう' },
 ];
 
 export function TopContents() {
