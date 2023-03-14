@@ -47,15 +47,15 @@ export default function Colors() {
     setSecondPicker((prevPicker) => !prevPicker);
   };
 
-  const hashtag = firstColor.slice(0, 1);
-  const hexRed = firstColor.slice(1, 3);
-  const hexGreen = firstColor.slice(3, 5);
-  const hexBlue = firstColor.slice(5, 7);
-  const hex = hashtag + hexRed + hexGreen + hexBlue;
+  // const hashtag = firstColor.slice(0, 1);
+  // const hexRed = firstColor.slice(1, 3);
+  // const hexGreen = firstColor.slice(3, 5);
+  // const hexBlue = firstColor.slice(5, 7);
+  // const hex = hashtag + hexRed + hexGreen + hexBlue;
 
-  const rgbaRed = parseInt(hexRed, 16);
-  const rgbaGreen = parseInt(hexGreen, 16);
-  const rgbaBlue = parseInt(hexBlue, 16);
+  // const rgbaRed = parseInt(hexRed, 16);
+  // const rgbaGreen = parseInt(hexGreen, 16);
+  // const rgbaBlue = parseInt(hexBlue, 16);
 
 
 
