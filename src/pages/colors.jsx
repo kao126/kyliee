@@ -23,21 +23,19 @@ export default function Colors() {
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
 
-  // const handleFirstChange = (color) => {
-  //   setFirstColor(color.hex);
-  // };
-  // Alpha値を16進数に変換する処理
+  // Alpha値を10進数→16進数に変換する処理
   const decimalToHex = (alpha) => (alpha === 0 ? '00' : Math.round(255 * alpha).toString(16));
 
   const handleFirstChange = (color) => {
-    // "ff0500" + "80"の形式になるように
+    // 8-digitのhex値を形式
     const hexCode = `${color.hex}${decimalToHex(color.rgb.a || 0)}`;
     setFirstColor(hexCode);
   };
 
-
   const handleSecondChange = (color) => {
-    setSecondColor(color.hex);
+    // 8-digitのhex値を形式
+    const hexCode = `${color.hex}${decimalToHex(color.rgb.a || 0)}`;
+    setSecondColor(hexCode);
   };
 
   const handleFirstPicker = () => {
