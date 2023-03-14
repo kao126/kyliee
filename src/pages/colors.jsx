@@ -17,9 +17,9 @@ import { Box, Grid, TextField } from '@mui/material';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Colors() {
-  const [firstColor, setFirstColor] = useState('#abcd06');
-  const [firstColors, setFirstColors] = useState(null);
-  const [secondColor, setSecondColor] = useState('#fff');
+  const [firstColor, setFirstColor] = useState('');
+  const [firstColors, setFirstColors] = useState('');
+  const [secondColor, setSecondColor] = useState('');
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
 
