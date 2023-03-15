@@ -22,6 +22,21 @@ export default function Colors() {
   const [secondColor, setSecondColor] = useState('');
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
+  console.log(firstColors);
+
+  const makeGradation = (rgb) => {
+    const brightenRed = (rgb.r + 3).toString(16);
+    const brightenGreen = (rgb.g + 3).toString(16);
+    const brightenBlue = (rgb.b + 3).toString(16);
+    const darkenRed = (rgb.r - 3).toString(16);
+    const darkenGreen = (rgb.g - 3).toString(16);
+    const darkenBlue = (rgb.b - 3).toString(16);
+
+    const brightenColor = `#${brightenRed}${brightenGreen}${brightenBlue}`;
+    const darkenColor = `#${darkenRed}${darkenGreen}${darkenBlue}`;
+
+    setFirstColors([darkenColor, ...firstColors, brightenColor]);
+  };
 
   // Alpha値を10進数→16進数に変換する処理
   const decimalToHex = (alpha) => (alpha === 0 ? '00' : Math.round(255 * alpha).toString(16));
@@ -30,6 +45,8 @@ export default function Colors() {
     // 8-digitのhex値を形式
     const hexCode = `${color.hex}${decimalToHex(color.rgb.a || 0)}`;
     setFirstColor(hexCode);
+    setFirstColors(hexCode);
+    makeGradation(color.rgb);
   };
 
   const handleSecondChange = (color) => {
@@ -55,8 +72,6 @@ export default function Colors() {
   // const rgbaGreen = parseInt(hexGreen, 16);
   // const rgbaBlue = parseInt(hexBlue, 16);
 
-
-
   return (
     <>
       <Head>
@@ -75,22 +90,17 @@ export default function Colors() {
         </Grid>
         <Grid container className='palette-container'>
           <Grid item xs={2}>
-            <Grid item>
-              <Box
-                className='color-palette'
-                style={{
-                  backgroundColor: firstColor,
-                }}
-              />
-            </Grid>
-            <Grid item>
-              <Box
-                className='color-palette'
-                style={{
-                  backgroundColor: firstColor,
-                }}
-              />
-            </Grid>
+            {firstColors &&
+              firstColors.map((color, i) => (
+                <Grid item key={i}>
+                  <Box
+                    className='color-palette'
+                    style={{
+                      backgroundColor: color,
+                    }}
+                  />
+                </Grid>
+              ))}
           </Grid>
           <Grid item xs={2}>
             <Grid item xs={12}>
