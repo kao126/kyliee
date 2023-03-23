@@ -20,7 +20,9 @@ export function SideDrawer({ open, handleDrawer }) {
         <div>
           <Link href={'/concept'}>Concept</Link>
         </div>
-        <div>aaa</div>
+        <div>
+          <Link href={'/gallery'}>Gallery</Link>
+        </div>
       </StyledList>
       {/* </DrawerHeader> */}
     </StyledDrawer>
