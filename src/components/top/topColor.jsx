@@ -49,6 +49,23 @@ const StyledWrapper = styled('div')`
   .subtitle {
     margin-bottom: 1rem;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    padding: 40px 16px 50px;
+    flex-direction: column;
+    .img {
+      width: calc(100% - 24px);
+      margin: 0 auto 40px;
+    }
+    .color_wrapper {
+      max-width: 500px;
+      padding: 0;
+    }
+    .title {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -57,7 +74,7 @@ const StyledLink = styled(Link)`
   border: 1px solid rgba(37, 42, 44, 0.16);
   border-radius: 2px;
   padding: 15px 15px 15px 24px;
-  margin-right: 55px;
+  max-width: 340px;
   color: #000;
   letter-spacing: 0.03rem;
   text-decoration: none;
