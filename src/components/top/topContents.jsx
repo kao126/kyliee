@@ -33,14 +33,20 @@ export function TopContents() {
           return (
             <StyledWrapper key={i}>
               <StyledImage src={contents.image} alt={`画像${i}`} aria-hidden='true' />
-              <div className='contents_description'>{contents.description}</div>
+              <div className='contents_description'>
+                <div>{contents.description}</div>
+                <span className='more'>More</span>
+              </div>
             </StyledWrapper>
           );
         } else {
           return (
             <StyledReverseWrapper key={i}>
               <StyledImage src={contents.image} alt={`画像${i}`} aria-hidden='true' />
-              <div className='contents_description'>{contents.description}</div>
+              <div className='contents_description'>
+                <div>{contents.description}</div>
+                <span className='news_more'>VIEW MORE</span>
+              </div>
             </StyledReverseWrapper>
           );
         }
@@ -55,6 +61,28 @@ const StyledWrapper = styled('div')`
   margin: 50px 0;
   .contents_description {
     width: 50%;
+    position: relative;
+  }
+  .more {
+    align-self: end;
+    position: absolute;
+    right: 0;
+    letter-spacing: 0.06rem;
+    ::before {
+      content: '';
+      position: absolute;
+      width: 35px;
+      height: 1px;
+      right: 50px;
+      top: 12px;
+      background-color: #222;
+    }
+    ::after {
+      content: '>';
+      position: absolute;
+      right: 48px;
+      color: #222;
+    }
   }
   @media screen and (max-width: 1024px) {
     display: block;
@@ -70,6 +98,16 @@ const StyledReverseWrapper = styled('div')`
   margin: 50px 0;
   .contents_description {
     width: 50%;
+    position: relative;
+  }
+  .news_more {
+    position: absolute;
+    width: 120px;
+    text-align: right;
+    right: 30px;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #abbcc1;
   }
   @media screen and (max-width: 1024px) {
     display: block;
