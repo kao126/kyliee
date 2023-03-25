@@ -12,7 +12,7 @@ import { useSideDrawer } from 'src/hooks/useSideDrawer';
 
 // styles
 import styled from '@emotion/styled';
-import conceptImage from 'public/images/CONCEPT_01.jpg';
+import conceptImage from 'public/images/CONCEPT.jpg';
 
 // Material-Ui
 import { IconButton } from '@mui/material';
@@ -25,9 +25,9 @@ export default function Concept() {
       <Head>
         <title>Concept</title>
       </Head>
-      <Header />
+      {/* <Header /> */}
       <StyledMain>
-        <StyledImage src={conceptImage} alt='concept-image' />
+        <StyledImage src={conceptImage} alt='コンセプト' />
         <div>
           <div className='contents'>
             <StyledIconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
@@ -75,6 +75,7 @@ const StyledImage = styled(Image)`
   width: 50%;
   height: 100vh;
   object-fit: cover;
+  object-position: bottom;
 `;
 
 const StyledIconButton = styled(IconButton)`

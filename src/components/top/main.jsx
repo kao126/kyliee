@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 // components
 import { Carousel } from 'src/components/common/carousel';
 import { TopNews } from 'src/components/top/topNews';
@@ -12,6 +14,9 @@ import theme from 'src/theme';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
+
+// image
+import topImage from 'public/images/TOP_01.jpg'
 
 export function Main() {
   return (
@@ -30,7 +35,8 @@ export function Main() {
           </li>
         </ul>
       </div>
-      <Carousel />
+      {/* <Carousel /> */}
+      <Image src={topImage} alt="トップ画像" className='top_image'/>
       <StyledContainer>
         <TopNews />
         <TopContents />
@@ -42,6 +48,11 @@ export function Main() {
 
 const StyledMain = styled('main')`
   background-color: ${theme.palette.background.main};
+  .top_image {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+  }
   .sns-area {
     position: fixed;
     bottom: 120px;

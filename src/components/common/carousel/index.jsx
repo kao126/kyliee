@@ -17,9 +17,9 @@ import 'swiper/css/scrollbar';
 
 // // style
 import styled from '@emotion/styled';
-import Image1 from 'public/images/TOP_01.webp';
-import Image2 from 'public/images/TOP_02.jpg';
-import Image3 from 'public/images/TOP_03.webp';
+import Image1 from 'public/images/01.webp';
+import Image2 from 'public/images/02.jpg';
+import Image3 from 'public/images/03.webp';
 
 const images = [Image1, Image2, Image3];
 
