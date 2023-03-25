@@ -21,7 +21,7 @@ const theme = createTheme({
       main: red.A400,
     },
     background: {
-      main: '#e9e9ec',
+      main: '#e6e6e6',
     },
     red: {
       50: red[50],
