@@ -25,14 +25,14 @@ export default function Concept() {
       <Head>
         <title>Concept</title>
       </Head>
-      {/* <Header /> */}
+      <Header isSpecified={true} color={'#fff'} BlackPainted={false} />
       <StyledMain>
         <StyledImage src={conceptImage} alt='コンセプト' />
         <div>
           <div className='contents'>
-            <StyledIconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
+            {/* <StyledIconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
               <MenuIcon fontSize='large' />
-            </StyledIconButton>
+            </StyledIconButton> */}
             <h1 className='title'>Concept</h1>
             <p className='description'>ここは、大嶋捷稔（おおしま かなる）の世界観を表現したポートフォリオです。</p>
             <p className='description'>Welcome to my Portfolio produced by Kanaru Oshima </p>
@@ -67,7 +67,6 @@ const StyledMain = styled('main')`
     }
   }
   .footer {
-
   }
 `;
 

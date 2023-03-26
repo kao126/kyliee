@@ -13,20 +13,23 @@ import { useSideDrawer } from 'src/hooks/useSideDrawer';
 
 // style
 import styled from '@emotion/styled';
-import Logo from 'public/images/LOGO.png';
+import blackLogo from 'public/images/BLACK_LOGO.png';
+import whiteLogo from 'public/images/WHITE_LOGO.png';
 
 // Material-Ui
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export function Header({ isActive }) {
+export function Header({ isActive, isSpecified, color, BlackPainted = true }) {
   const isDisplay = isActive ? 'is_display' : 'is_not_display';
   const { open, handleDrawer } = useSideDrawer();
 
+  const logo = BlackPainted ? blackLogo : whiteLogo;
+
   return (
     <>
-      <StyledHeader className={isDisplay}>
-        <Image src={Logo} alt='logo' className='logo' />
+      <StyledHeader className={isDisplay} props={{ isSpecified, color }}>
+        <Image src={logo} alt='logo' className='logo' />
         <IconButton color='inherit' aria-label='open drawer' className='icon_button' onClick={handleDrawer}>
           <MenuIcon className='menu-icon' />
         </IconButton>
@@ -57,7 +60,7 @@ const StyledHeader = styled('header')`
     padding: 12px;
     .menu-icon {
       font-size: 3rem;
-      color: #333333;
+      color: ${({ props }) => (props.isSpecified ? props.color : `#333333`)};
     }
   }
   @media screen and (max-width: 425px) {
