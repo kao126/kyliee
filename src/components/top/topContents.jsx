@@ -57,7 +57,6 @@ export function TopContents() {
 
 const StyledWrapper = styled('div')`
   display: flex;
-  justify-content: space-between;
   margin: 50px 0;
   .contents_description {
     width: 50%;
@@ -73,10 +72,11 @@ const StyledWrapper = styled('div')`
     padding-bottom: 5px;
     border-bottom: 1px solid #abbcc1;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 425px) {
     display: block;
     .contents_description {
       width: 100%;
+      padding-left: 0;
     }
   }
 `;
@@ -98,10 +98,13 @@ const StyledReverseWrapper = styled('div')`
     padding-bottom: 5px;
     border-bottom: 1px solid #abbcc1;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 425px) {
     display: block;
     .contents_description {
       width: 100%;
+    }
+    .news_more {
+      right: 0;
     }
   }
 `;
@@ -110,7 +113,7 @@ const StyledImage = styled(Image)`
   max-width: 50%;
   height: auto;
   object-fit: cover;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 425px) {
     max-width: 100%;
   }
 `;
