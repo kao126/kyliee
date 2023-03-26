@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Header } from 'src/components/common/header';
 import { Footer } from 'src/components/common/footer';
 import { SideDrawer } from 'src/components/common/sideDrawer';
+// import { PageContainer } from 'src/components/common/pageContainer';
 
 // Hooks
 import { useSideDrawer } from 'src/hooks/useSideDrawer';
@@ -26,6 +27,7 @@ export default function Concept() {
         <title>Concept</title>
       </Head>
       <Header isSpecified={true} color={'#fff'} BlackPainted={false} />
+      {/* <PageContainer> */}
       <StyledMain>
         <StyledImage src={conceptImage} alt='コンセプト' />
         <div>
@@ -40,6 +42,7 @@ export default function Concept() {
           <Footer className='footer' />
         </div>
       </StyledMain>
+      {/* </PageContainer> */}
       <SideDrawer handleDrawer={handleDrawer} open={open} />
     </>
   );
@@ -68,6 +71,24 @@ const StyledMain = styled('main')`
   }
   .footer {
   }
+  @media screen and (max-width: 1024px) {
+    flex-direction: column-reverse;
+    > div {
+      width: 100%;
+      .title {
+        margin-top: 180px;
+        margin-bottom: 50px;
+      }
+      .contents {
+        margin: 0 auto 80px;
+      }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .title {
+      margin-top: 160px;
+    }
+  }
 `;
 
 const StyledImage = styled(Image)`
@@ -75,6 +96,9 @@ const StyledImage = styled(Image)`
   height: 100vh;
   object-fit: cover;
   object-position: bottom;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const StyledIconButton = styled(IconButton)`
