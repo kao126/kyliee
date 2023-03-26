@@ -35,7 +35,7 @@ export function TopContents() {
               <StyledImage src={contents.image} alt={`画像${i}`} aria-hidden='true' />
               <div className='contents_description'>
                 <div>{contents.description}</div>
-                <span className='more'>More</span>
+                <span className='news_more'>VIEW MORE</span>
               </div>
             </StyledWrapper>
           );
@@ -62,27 +62,16 @@ const StyledWrapper = styled('div')`
   .contents_description {
     width: 50%;
     position: relative;
+    padding-left: 30px;
   }
-  .more {
-    align-self: end;
+  .news_more {
     position: absolute;
+    width: 120px;
+    text-align: right;
     right: 0;
-    letter-spacing: 0.06rem;
-    ::before {
-      content: '';
-      position: absolute;
-      width: 35px;
-      height: 1px;
-      right: 50px;
-      top: 12px;
-      background-color: #222;
-    }
-    ::after {
-      content: '>';
-      position: absolute;
-      right: 48px;
-      color: #222;
-    }
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #abbcc1;
   }
   @media screen and (max-width: 1024px) {
     display: block;
