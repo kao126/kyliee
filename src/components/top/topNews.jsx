@@ -33,7 +33,7 @@ export function TopNews() {
           </Link>
         </li>
       </ul>
-      <Link href={'/colors'} className='news_more'>
+      <Link href={'/news'} className='news_more'>
         <span>ニュース一覧をみる</span>
         {/* <KeyboardArrowRightIcon /> */}
       </Link>
