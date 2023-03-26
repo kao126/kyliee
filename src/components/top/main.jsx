@@ -16,7 +16,7 @@ import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 // image
-import topImage from 'public/images/TOP_01.jpg'
+import topImage from 'public/images/TOP_01.jpg';
 
 export function Main() {
   return (
@@ -36,7 +36,7 @@ export function Main() {
         </ul>
       </div>
       {/* <Carousel /> */}
-      <Image src={topImage} alt="トップ画像" className='top_image'/>
+      <Image src={topImage} alt='トップ画像' className='top_image' />
       <StyledContainer>
         <TopNews />
         <TopContents />
@@ -82,6 +82,13 @@ const StyledMain = styled('main')`
     }
     .sns-contents {
       padding: 5px 0;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .top_image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
     }
   }
 `;
