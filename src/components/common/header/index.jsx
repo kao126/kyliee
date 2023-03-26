@@ -13,7 +13,7 @@ import { useSideDrawer } from 'src/hooks/useSideDrawer';
 
 // style
 import styled from '@emotion/styled';
-import Logo from 'public/images/kyliee.png';
+import Logo from 'public/images/LOGO.png';
 
 // Material-Ui
 import IconButton from '@mui/material/IconButton';
@@ -26,10 +26,8 @@ export function Header({ isActive }) {
   return (
     <>
       <StyledHeader className={isDisplay}>
-        <div className='logo'>
-          <Image src={Logo} alt='logo' height={70} />
-        </div>
-        <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawer}>
+        <Image src={Logo} alt='logo' className='logo' />
+        <IconButton color='inherit' aria-label='open drawer' className='icon_button' onClick={handleDrawer}>
           <MenuIcon className='menu-icon' />
         </IconButton>
       </StyledHeader>
@@ -39,15 +37,6 @@ export function Header({ isActive }) {
 }
 
 const StyledHeader = styled('header')`
-  width: 100%;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
-  position: fixed;
-  z-index: 9999;
   .is_display {
     opacity: 1;
   }
@@ -57,11 +46,26 @@ const StyledHeader = styled('header')`
   }
 
   .logo {
-    width: 15%;
-    align-self: flex-end;
+    position: fixed;
+    max-width: 200px;
+    height: auto;
+    padding: 16px;
   }
-  .menu-icon {
-    font-size: 3rem;
-    color: #333;
+  .icon_button {
+    position: fixed;
+    right: 0;
+    padding: 12px;
+    .menu-icon {
+      font-size: 3rem;
+      color: #333333;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .logo {
+      padding: 16px 8px;
+    }
+    .icon_button {
+      padding: 16px;
+    }
   }
 `;
