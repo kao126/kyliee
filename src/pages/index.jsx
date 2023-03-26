@@ -13,7 +13,8 @@ import { Footer } from 'src/components/common/footer';
 import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
 
 // styles
-import styles from 'src/styles/Home.module.css';
+// import styles from 'src/styles/Home.module.css';
+import styled from '@emotion/styled';
 
 export default function Home() {
   const { isHeaderActive } = useHeaderScroll();
@@ -31,16 +32,49 @@ export default function Home() {
         <title>Top</title>
       </Head>
       {isLoading ? (
-        <div className={styles.entry_loading}>
-          <div className={styles.loading_border}></div>
-        </div>
+        <StyledLoading>
+          <div className='loading_border'></div>
+        </StyledLoading>
       ) : (
-        <div className={styles.top}>
+        <StyledDiv>
           <Header isActive={isHeaderActive} />
           <Main />
           <Footer />
-        </div>
+        </StyledDiv>
       )}
     </>
   );
 }
+
+const StyledLoading = styled('div')`
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  .loading_border {
+    width: 100%;
+    animation: fadeIn 2s ease-in-out, widthIn 2s ease-in-out;
+    background-color: #aaa;
+    height: 2px;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes widthIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+`;
+
+const StyledDiv = styled('div')`
+  animation: fadeIn 1.5s ease;
+`;
