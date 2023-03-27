@@ -10,7 +10,7 @@ export function TopNews() {
   return (
     <StyledNews id='news'>
       <h1 className='title_wrapper'>
-        News<span className='title_jp'>ニュース情報</span>
+        News<span className='title_jp'>最新情報</span>
       </h1>
 
       <ul className='contents_wrapper'>
