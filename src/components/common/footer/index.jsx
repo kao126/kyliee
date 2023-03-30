@@ -14,12 +14,16 @@ export function Footer() {
   }
   return (
     <StyledFooter>
-      Footer
-      <Breadcrumbs aria-label='breadcrumb' className='Breadcrumbs'>
+      <div>© KYLIEE All Rights Reserved.</div>
+      {/* <Breadcrumbs aria-label='breadcrumb' className='Breadcrumbs'>
         <StyledBreadcrumb component='a' href='#' label='Home' variant='outlined' icon={<HomeIcon fontSize='small' color='#fff' />} />
         <StyledBreadcrumb component='a' href='#' label='Catalog' variant='outlined' />
         <StyledBreadcrumb label='Accessories' variant='outlined' deleteIcon={<ExpandMoreIcon />} onDelete={handleClick} />
-      </Breadcrumbs>
+        <div>About</div>
+        <div>Concept</div>
+        <div>Gallery</div>
+        <div>Contact</div>
+      </Breadcrumbs> */}
     </StyledFooter>
   );
 }
@@ -30,9 +34,14 @@ const StyledFooter = styled('footer')`
   /* color: #646464; */
   background-color: #333333;
   color: #fff;
-  .Breadcrumbs {
+  text-align: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* .Breadcrumbs {
     color: #fff;
-  }
+  } */
 `;
 
 const StyledBreadcrumb = styled(Chip)`
