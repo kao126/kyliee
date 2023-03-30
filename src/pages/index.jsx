@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 // components
 import { Header } from 'src/components/common/header';
 import { Main } from 'src/components/top/main';
-import { Footer } from 'src/components/common/footer';
+import { SimpleFooter } from 'src/components/common/footer/simpleFooter.jsx';
 
 // hooks
 import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
@@ -39,7 +39,7 @@ export default function Home() {
         <StyledDiv>
           <Header isActive={isHeaderActive} />
           <Main />
-          <Footer />
+          <SimpleFooter />
         </StyledDiv>
       )}
     </>

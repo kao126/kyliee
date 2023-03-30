@@ -3,16 +3,16 @@ import { Inter } from '@next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export function Footer() {
+export function SimpleFooter() {
 
   return (
-    <StyledFooter>
-      {/* <div className='footer_text'>© KYLIEE All Rights Reserved.</div> */}
-    </StyledFooter>
+    <StyledSimpleFooter>
+      <div className='footer_text'>© KYLIEE All Rights Reserved.</div>
+    </StyledSimpleFooter>
   );
 }
 
-const StyledFooter = styled('footer')`
+const StyledSimpleFooter = styled('footer')`
   display: flex;
   justify-content: center;
   align-items: center;
