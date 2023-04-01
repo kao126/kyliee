@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google';
 
 // components
 import { Header } from 'src/components/common/header';
-import { Footer } from 'src/components/common/footer';
+import { SimpleFooter } from 'src/components/common/footer/simpleFooter';
 // material-ui
 import { Grid, Typography } from '@mui/material';
 // styles
@@ -75,7 +75,7 @@ export default function Gallery() {
           </Grid>
         </Grid>
       </StyledMain>
-      <Footer />
+      <SimpleFooter />
     </>
   );
 }
