@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
-import { Inter } from '@next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export function SimpleFooter() {
-
   return (
     <StyledSimpleFooter>
       <div className='footer_text'>© KYLIEE All Rights Reserved.</div>
@@ -19,6 +15,6 @@ const StyledSimpleFooter = styled('footer')`
   height: 120px;
   background-color: #333333;
   .footer_text {
-    color: #fff;
+    color: #ddd;
   }
 `;
