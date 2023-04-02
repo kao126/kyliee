@@ -1,11 +1,14 @@
+// Next.js
+import Image from 'next/image';
 import Link from 'next/link';
 
-// styles
+// Styles
 import styled from '@emotion/styled';
 
 // Material-Ui
-import { Drawer, Button, List, ListItem } from '@mui/material';
+import { Drawer, Button, List, ListItem, Divider } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import LogoMark from 'public/images/LOGO_MARK.png';
 
 export function SideDrawer({ open, handleDrawer }) {
   return (
@@ -21,18 +24,22 @@ export function SideDrawer({ open, handleDrawer }) {
         </ListItem>
         <ListItem disablePadding>
           <Link href={'/about'}>
-            About<span>アバウト</span>
+            About<span>自己紹介</span>
           </Link>
         </ListItem>
         <ListItem disablePadding>
           <Link href={'/concept'}>
-            Concept<span>コンセプト</span>
+            Concept<span>世界観</span>
           </Link>
         </ListItem>
         <ListItem disablePadding>
           <Link href={'/gallery'}>
-            Gallery<span>ギャラリー</span>
+            Gallery<span>作品集</span>
           </Link>
+        </ListItem>
+        <Divider />
+        <ListItem disablePadding>
+          <Image src={LogoMark} alt='logo' className='logo' />
         </ListItem>
       </StyledList>
     </StyledDrawer>
@@ -44,6 +51,11 @@ const StyledDrawer = styled(Drawer)`
     width: 66%;
     justify-content: center;
     padding: 0 60px;
+  }
+  .logo {
+    width: 65%;
+    height: auto;
+    margin: 20px auto;
   }
   @media screen and (max-width: 425px) {
     .MuiDrawer-paper {
