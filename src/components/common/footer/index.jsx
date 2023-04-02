@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Image from 'next/image';
 import Link from 'next/link';
-import Wantedly from 'public/images/Wantedly.png';
+import Wantedly from 'public/images/Wantedly_W.png';
 
 export function Footer() {
   return (
