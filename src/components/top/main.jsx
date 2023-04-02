@@ -57,7 +57,7 @@ const StyledMain = styled('main')`
     position: fixed;
     bottom: 120px;
     right: 35px;
-    z-index: 9999;
+    z-index: 1;
     .sns-title {
       writing-mode: vertical-rl;
       font-size: 1.1rem;
