@@ -47,7 +47,8 @@ export function Main() {
 }
 
 const StyledMain = styled('main')`
-  background-color: ${theme.palette.background.main};
+  /* background-color: ${theme.palette.background.main}; */
+  background-color: #fff;
   .top_image {
     width: 100%;
     height: 100vh;
