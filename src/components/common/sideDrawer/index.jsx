@@ -34,6 +34,11 @@ export function SideDrawer({ open, handleDrawer }) {
         </ListItem>
         <ListItem disablePadding>
           <Link href={'/gallery'}>
+            Blog<span>記事</span>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding>
+          <Link href={'/gallery'}>
             Gallery<span>作品集</span>
           </Link>
         </ListItem>
