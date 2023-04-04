@@ -1,106 +1,93 @@
 // Next.js
 import Image from 'next/image';
+import Link from 'next/link';
 // style
 import styled from '@emotion/styled';
 
 import Image1 from 'public/images/01.webp';
 import Image2 from 'public/images/02.jpg';
-import Image3 from 'public/images/03.webp';
-
-const contents = [
-  { image: Image1, description: 'あああ' },
-  { image: Image2, description: 'いいい' },
-  { image: Image3, description: 'ううう' },
-];
 
 export function TopContents() {
   return (
     <>
-      {/* <StyledWrapper>
-        <StyledImage src={Image1} alt='画像1' aria-hidden='true' />
-        <div className='contents_description'>あああ</div>
-      </StyledWrapper>
       <StyledWrapper>
-        <StyledImage src={Image2} alt='画像2' aria-hidden='true' />
-        <div className='contents_description'>いいい</div>
+        <StyledImage src={Image1} alt='About' aria-hidden='true' />
+        <div className='content'>
+          <h2 className='title'>ABOUT</h2>
+          <div className='description'>経歴・趣味・スキルについて</div>
+          <Link href={'/about'}>
+            <span className='news_more'>VIEW MORE</span>
+          </Link>
+        </div>
       </StyledWrapper>
-      <StyledWrapper>
-        <StyledImage src={Image3} alt='画像3' aria-hidden='true' />
-        <div className='contents_description'>ううう</div>
-      </StyledWrapper> */}
-      {contents.map((contents, i) => {
-        if (i % 2 === 0) {
-          return (
-            <StyledWrapper key={i}>
-              <StyledImage src={contents.image} alt={`画像${i}`} aria-hidden='true' />
-              <div className='contents_description'>
-                <div>{contents.description}</div>
-                <span className='news_more'>VIEW MORE</span>
-              </div>
-            </StyledWrapper>
-          );
-        } else {
-          return (
-            <StyledReverseWrapper key={i}>
-              <StyledImage src={contents.image} alt={`画像${i}`} aria-hidden='true' />
-              <div className='contents_description'>
-                <div>{contents.description}</div>
-                <span className='news_more'>VIEW MORE</span>
-              </div>
-            </StyledReverseWrapper>
-          );
-        }
-      })}
+      <StyledWrapper reverse={true}>
+        <StyledImage src={Image2} alt='Concept' aria-hidden='true' />
+        <div className='content'>
+          <h2 className='title'>CONCEPT</h2>
+          <div className='description'>このポートフォリオについて</div>
+          <Link href={'/concept'}>
+            <span className='news_more'>VIEW MORE</span>
+          </Link>
+        </div>
+      </StyledWrapper>
     </>
   );
 }
 
 const StyledWrapper = styled('div')`
   display: flex;
+  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'initial')};
   margin: 50px 0;
-  .contents_description {
+  .content {
     width: 50%;
     position: relative;
-    padding-left: 30px;
+    padding: ${({ reverse }) => (reverse ? '0 60px 0 0' : '0 0 0 60px')};
+    margin: auto;
+  }
+  .title {
+    font-size: 90px;
+    line-height: 1.3;
+    letter-spacing: 0.12em;
+    margin: 0;
+    color: #333333;
+  }
+  .description {
+    margin: 20px 0 45px;
   }
   .news_more {
     position: absolute;
     width: 120px;
+    color: #333333;
     text-align: right;
-    right: 0;
+    right: ${({ reverse }) => (reverse ? '60px' : '0')};
     font-size: 1rem;
     padding-bottom: 5px;
     border-bottom: 1px solid #abbcc1;
   }
   @media screen and (max-width: 425px) {
     display: block;
-    .contents_description {
+    margin: 50px 0 80px;
+    .content {
       width: 100%;
       padding-left: 0;
+    }
+    .title {
+      font-size: 45px;
+      letter-spacing: 0.03em;
+    }
+    .description {
+      margin: 10px 0;
+    }
+    .news_more {
+      right: 0;
     }
   }
 `;
 
 const StyledReverseWrapper = styled('div')`
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 50px 0;
-  .contents_description {
-    width: 50%;
-    position: relative;
-  }
-  .news_more {
-    position: absolute;
-    width: 120px;
-    text-align: right;
-    right: 30px;
-    font-size: 1rem;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #abbcc1;
-  }
   @media screen and (max-width: 425px) {
     display: block;
-    .contents_description {
+    .content {
       width: 100%;
     }
     .news_more {
