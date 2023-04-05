@@ -37,9 +37,9 @@ export default function Concept() {
             </StyledIconButton> */}
             <h1 className='title'>Concept</h1>
             <p className='description'>ここは、大嶋捷稔（おおしま かなる）の世界観を表現したポートフォリオです。</p>
-            <p className='description'>Welcome to my Portfolio produced by Kanaru Oshima </p>
+            <p className='description'>Welcome to my Portfolio designed by Kanaru Oshima </p>
           </div>
-          <Footer className='footer' />
+          {/* <Footer className='footer' /> */}
         </div>
       </StyledMain>
       {/* </PageContainer> */}
@@ -69,8 +69,8 @@ const StyledMain = styled('main')`
       font-size: 12px;
     }
   }
-  .footer {
-  }
+  /* .footer {
+  } */
   @media screen and (max-width: 1024px) {
     flex-direction: column-reverse;
     > div {
