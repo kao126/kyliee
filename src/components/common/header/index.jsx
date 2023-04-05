@@ -29,7 +29,9 @@ export function Header({ isActive, isSpecified, color, BlackPainted = true }) {
   return (
     <>
       <StyledHeader className={isDisplay} props={{ isSpecified, color }}>
-        <Image src={logo} alt='logo' className='logo' />
+        <Link href={'/'}>
+          <Image src={logo} alt='logo' className='logo' />
+        </Link>
         <IconButton color='inherit' aria-label='open drawer' className='icon_button' onClick={handleDrawer}>
           <MenuIcon className='menu-icon' />
         </IconButton>
