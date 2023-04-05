@@ -33,7 +33,7 @@ export function SideDrawer({ open, handleDrawer }) {
           </Link>
         </ListItem>
         <ListItem disablePadding>
-          <Link href={'/gallery'}>
+          <Link href={'/blog'}>
             Blog<span>記事</span>
           </Link>
         </ListItem>
