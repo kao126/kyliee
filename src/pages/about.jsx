@@ -29,9 +29,25 @@ export default function About() {
           <h1>
             大嶋 捷稔 <span className='en_name'>Kanaru Oshima</span>
           </h1>
-          <div>趣味</div>
-          <div>経歴</div>
-          <div>スキル</div>
+          <div>
+            <p>
+              趣味 / 最近ハマっていること <span className='en_name'>What I am into</span>
+            </p>
+            <p>音楽探し、ジムでの筋トレと柔軟、アニメ鑑賞、ポッドキャストを聴きながら散歩すること</p>
+          </div>
+          <div>
+            <p>
+              経歴　<span className='en_name'>Career</span>
+            </p>
+            <p>2020年4月~ 営業</p>
+          </div>
+          <div>
+            <p>
+              スキル <span className='en_name'>Skill</span>
+            </p>
+            <p>HTML CSS React(Redux) / Ruby on Rails(Ruby) AWS</p>
+            <p>グラフで書こうかな（習得度などを表せるように）</p>
+          </div>
         </div>
       </StyledMain>
       <Footer />
