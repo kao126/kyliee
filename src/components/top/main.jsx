@@ -42,8 +42,8 @@ export function Main() {
         <TopNews />
         <TopContents />
       </StyledContainer>
-      <TopColor />
       <TopBlog />
+      {/* <TopColor /> */}
     </StyledMain>
   );
 }
