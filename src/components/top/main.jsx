@@ -5,6 +5,7 @@ import { Carousel } from 'src/components/common/carousel';
 import { TopNews } from 'src/components/top/topNews';
 import { TopContents } from 'src/components/top/topContents';
 import { TopColor } from 'src/components/top/topColor';
+import { TopBlog } from 'src/components/top/topBlog';
 
 // style
 import styled from '@emotion/styled';
@@ -41,7 +42,8 @@ export function Main() {
         <TopNews />
         <TopContents />
       </StyledContainer>
-      <TopColor />
+      <TopBlog />
+      {/* <TopColor /> */}
     </StyledMain>
   );
 }
