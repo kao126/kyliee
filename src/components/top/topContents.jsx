@@ -84,18 +84,6 @@ const StyledWrapper = styled('div')`
   }
 `;
 
-const StyledReverseWrapper = styled('div')`
-  @media screen and (max-width: 425px) {
-    display: block;
-    .content {
-      width: 100%;
-    }
-    .news_more {
-      right: 0;
-    }
-  }
-`;
-
 const StyledImage = styled(Image)`
   max-width: 50%;
   height: auto;
