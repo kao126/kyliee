@@ -39,7 +39,9 @@ export default function About() {
             <p>
               経歴　<span className='en_name'>Career</span>
             </p>
-            <p>2020年4月~ 営業</p>
+            <p>2020年4月~2022年3月 営業</p>
+            <p>2022年4月~7月 プログラミングスクール</p>
+            <p>2022年10月~ 現職</p>
           </div>
           <div>
             <p>
