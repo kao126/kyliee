@@ -3,67 +3,108 @@ import Image from 'next/image';
 // style
 import styled from '@emotion/styled';
 
-import blogImg from 'public/images/BLOG.jpg';
-import { Button } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import Link from 'next/link';
+import NoImage from 'public/images/NO_IMAGE.jpg';
 
 export function TopBlog() {
   return (
     <StyledWrapper>
-      <div className='img_container'>
-        <Image src={blogImg} alt='ブログ画像' className='img' />
-      </div>
       <div className='contents'>
-        <h2 className='title'>BLOG</h2>
+        <h1 className='title_wrapper'>
+          BLOG<span className='title_jp'>最新記事</span>
+        </h1>
         <div className='description'>ブログの説明</div>
-        <StyledLink href={'/blog'}>ブログをみる</StyledLink>
+        <Grid container className='grid_container'>
+          <Grid item xs={12} md={6} className='grid_item'>
+            <Image src={NoImage} className='img' />
+            <Typography className='img_title'>１つ目の記事</Typography>
+            <Typography className='img_date'>
+              <time dateTime='2023-4-3'>2023.04.03</time>
+            </Typography>
+            <Link href={'/'} className='link'>
+              ＋ 本文を読む
+            </Link>
+          </Grid>
+          <Grid item xs={12} md={6} className='grid_item'>
+            <Image src={NoImage} className='img' />
+            <Typography className='img_title'>２つ目の記事</Typography>
+            <Typography className='img_date'>
+              <time dateTime='2023-4-3'>2023.04.03</time>
+            </Typography>
+            <Link href={'/'} className='link'>
+              ＋ 本文を読む
+            </Link>
+          </Grid>
+        </Grid>
+        <StyledLink href={'/blog'}>一覧をみる</StyledLink>
       </div>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled('div')`
-  display: flex;
-  height: 500px;
-  background-color: #eaeaea;
-  .img_container {
-    position: relative;
-    width: 50%;
-  }
-  .img {
-    position: absolute;
-    width: 70%;
-    height: auto;
-    top: 65px;
-    left: 70px;
-    object-fit: cover;
-    transform: rotate(3.35deg);
-  }
-  .contents {
-    width: 50%;
-  }
-  .title {
+  .title_wrapper {
+    text-align: center;
     font-size: 90px;
     line-height: 1.3;
     letter-spacing: 0.12em;
     margin: 0;
     color: #333333;
+    .title_jp {
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
   }
-  .description {
+  .grid_container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
   }
-  @media screen and (max-width: 425px) {
+  .grid_item {
+    position: relative;
+    padding: 0 40px;
+    margin: 40px 0;
+  }
+  .img {
+    width: 100%;
+    height: 300px;
+    border: thin solid lightgray;
+    margin-bottom: 25px;
+    object-fit: cover;
+  }
+  .img_title {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .link {
+    position: absolute;
+    right: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
   }
 `;
 
 const StyledLink = styled(Link)`
-  background-color: #fff;
-  color: #333333;
-  display: inline-block;
-  width: 250px;
-  height: 50px;
-  border: 1px solid #333333;
-  border-radius: 25px;
-  text-align: center;
-  line-height: 50px;
+  display: block;
+  border: 1px solid rgba(37, 42, 44, 0.5);
+  border-radius: 2px;
+  padding: 15px;
+  max-width: 230px;
+  color: #000;
+  letter-spacing: 0.03rem;
   text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  :hover {
+    opacity: 0.7;
+  }
 `;
