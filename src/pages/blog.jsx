@@ -27,7 +27,7 @@ export default function Blog() {
         <Grid container className='grid_container'>
           <Grid item xs={12} md={6} className='grid_item'>
             <Image src={NoImage} className='img' />
-            <Typography variant='h3' component='h3' className='img_title'>
+            <Typography className='img_title'>
               １つ目の記事
             </Typography>
             <Typography className='img_date'>
