@@ -46,6 +46,8 @@ export function TopBlog() {
 }
 
 const StyledWrapper = styled('div')`
+  position: relative;
+  margin-bottom: 100px;
   .title_wrapper {
     text-align: center;
     font-size: 90px;
@@ -53,10 +55,6 @@ const StyledWrapper = styled('div')`
     letter-spacing: 0.12em;
     margin: 0;
     color: #333333;
-    .title_jp {
-      font-size: 1rem;
-      margin-left: 1rem;
-    }
   }
   .grid_container {
     max-width: 1200px;
@@ -67,6 +65,9 @@ const StyledWrapper = styled('div')`
     position: relative;
     padding: 0 40px;
     margin: 40px 0;
+  }
+  .card {
+    padding: 16px;
   }
   .img {
     width: 100%;
@@ -82,16 +83,46 @@ const StyledWrapper = styled('div')`
     line-height: 1.7;
     margin-bottom: 10px;
   }
+  .img_date {
+    position: relative;
+    ::before {
+      position: absolute;
+      content: '';
+      background-color: #fff;
+      width: 30px;
+      height: 5px;
+      top: -5px;
+      right: 35px;
+      z-index: 1;
+    }
+    ::after {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0;
+      top: -20px;
+      right: 20px;
+      z-index: 1;
+      border-style: solid;
+      border-width: 16.5px 0px 16.5px 22.5px;
+      border-color: transparent transparent transparent #fff;
+    }
+  }
   .link {
-    position: absolute;
-    right: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #333333;
+    position: relative;
     text-decoration: none;
-    border-bottom: 1px solid #333;
-    letter-spacing: 0.1em;
-    line-height: 1.6;
+    color: #333;
+    ::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 70px;
+      height: 70px;
+      top: 25px;
+      right: 7px;
+      background-color: #333;
+      border-radius: 50%;
+    }
   }
 `;
 
