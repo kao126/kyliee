@@ -11,9 +11,7 @@ export function TopBlog() {
   return (
     <StyledWrapper>
       <div className='contents'>
-        <h1 className='title_wrapper'>
-          BLOG<span className='title_jp'>最新記事</span>
-        </h1>
+        <h1 className='title_wrapper'>BLOG</h1>
         <div className='description'>ブログの説明</div>
         <Grid container className='grid_container'>
           <Grid item xs={12} md={6} className='grid_item'>
