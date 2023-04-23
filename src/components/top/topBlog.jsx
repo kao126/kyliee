@@ -37,7 +37,9 @@ export function TopBlog() {
             </Card>
           </Grid>
         </Grid>
-        <StyledLink href={'/blog'}>一覧をみる</StyledLink>
+        <StyledLink href={'/blog'}>
+          <span className='news_more'>VIEW MORE</span>
+        </StyledLink>
       </div>
     </StyledWrapper>
   );
@@ -94,17 +96,13 @@ const StyledWrapper = styled('div')`
 `;
 
 const StyledLink = styled(Link)`
-  display: block;
-  border: 1px solid rgba(37, 42, 44, 0.5);
-  border-radius: 2px;
-  padding: 15px;
-  max-width: 230px;
-  color: #000;
-  letter-spacing: 0.03rem;
+  position: absolute;
+  width: 120px;
+  color: #333333;
   text-decoration: none;
-  margin: 0 auto;
-  text-align: center;
-  :hover {
-    opacity: 0.7;
-  }
+  text-align: right;
+  right: 0;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #abbcc1;
 `;
