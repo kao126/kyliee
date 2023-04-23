@@ -3,7 +3,7 @@ import Image from 'next/image';
 // style
 import styled from '@emotion/styled';
 
-import { Grid, Typography } from '@mui/material';
+import { Card, Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import NoImage from 'public/images/NO_IMAGE.jpg';
 
@@ -15,24 +15,26 @@ export function TopBlog() {
         <div className='description'>ブログの説明</div>
         <Grid container className='grid_container'>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
-            <Typography className='img_title'>１つ目の記事</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
-            </Typography>
-            <Link href={'/'} className='link'>
-              ＋ 本文を読む
-            </Link>
+            <Card elevation={5} className='card'>
+              <Link href={'/'} className='link'>
+                <Image src={NoImage} className='img' />
+                <Typography className='img_title'>１つ目の記事</Typography>
+                <Typography className='img_date'>
+                  <time dateTime='2023-4-3'>2023.04.03</time>
+                </Typography>
+              </Link>
+            </Card>
           </Grid>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
-            <Typography className='img_title'>２つ目の記事</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
-            </Typography>
-            <Link href={'/'} className='link'>
-              ＋ 本文を読む
-            </Link>
+            <Card elevation={5} className='card'>
+              <Link href={'/'} className='link'>
+                <Image src={NoImage} className='img' />
+                <Typography className='img_title'>２つ目の記事</Typography>
+                <Typography className='img_date'>
+                  <time dateTime='2023-4-3'>2023.04.03</time>
+                </Typography>
+              </Link>
+            </Card>
           </Grid>
         </Grid>
         <StyledLink href={'/blog'}>一覧をみる</StyledLink>
