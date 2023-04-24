@@ -26,10 +26,8 @@ export default function Blog() {
         <h1 className='title'>Blog</h1>
         <Grid container className='grid_container'>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
-            <Typography className='img_title'>
-              １つ目の記事
-            </Typography>
+            <Image src={NoImage} className='img' alt='イメージ画像' />
+            <Typography className='img_title'>１つ目の記事</Typography>
             <Typography className='img_date'>
               <time dateTime='2023-4-3'>2023.04.03</time>
             </Typography>
@@ -38,7 +36,7 @@ export default function Blog() {
             </Link>
           </Grid>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img_title'>２つ目の記事</Typography>
             <Typography className='img_date'>
               <time dateTime='2023-4-3'>2023.04.03</time>
@@ -48,7 +46,7 @@ export default function Blog() {
             </Link>
           </Grid>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img_title'>３つ目の記事</Typography>
             <Typography className='img_date'>
               <time dateTime='2023-4-3'>2023.04.03</time>
@@ -58,7 +56,7 @@ export default function Blog() {
             </Link>
           </Grid>
           <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img_title'>４つ目の記事</Typography>
             <Typography className='img_date'>
               <time dateTime='2023-4-3'>2023.04.03</time>
