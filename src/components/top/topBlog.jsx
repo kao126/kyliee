@@ -37,9 +37,7 @@ export function TopBlog() {
             </Card>
           </Grid>
         </Grid>
-        <StyledLink href={'/blog'}>
-          <span className='news_more'>VIEW MORE</span>
-        </StyledLink>
+        <StyledLink href={'/blog'}>VIEW MORE</StyledLink>
       </div>
     </StyledWrapper>
   );
