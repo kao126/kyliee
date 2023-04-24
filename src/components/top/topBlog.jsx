@@ -18,7 +18,7 @@ export function TopBlog() {
           <Grid item xs={12} md={6} className='grid_item'>
             <Card elevation={5} className='card'>
               <Link href={'/'} className='link'>
-                <Image src={NoImage} className='img' />
+                <Image src={NoImage} className='img' alt='イメージ画像' />
                 <Typography className='img_title'>１つ目の記事</Typography>
                 <Typography className='img_date'>
                   <time dateTime='2023-4-3'>2023.04.03</time>
@@ -29,7 +29,7 @@ export function TopBlog() {
           <Grid item xs={12} md={6} className='grid_item'>
             <Card elevation={5} className='card'>
               <Link href={'/'} className='link'>
-                <Image src={NoImage} className='img' />
+                <Image src={NoImage} className='img' alt='イメージ画像' />
                 <Typography className='img_title'>２つ目の記事</Typography>
                 <Typography className='img_date'>
                   <time dateTime='2023-4-3'>2023.04.03</time>
