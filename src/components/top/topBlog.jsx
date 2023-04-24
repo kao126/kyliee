@@ -1,10 +1,11 @@
 // Next.js
 import Image from 'next/image';
+import Link from 'next/link';
 // style
 import styled from '@emotion/styled';
-
+// material-ui
 import { Card, Grid, Typography } from '@mui/material';
-import Link from 'next/link';
+// images
 import NoImage from 'public/images/NO_IMAGE.jpg';
 
 export function TopBlog() {
