@@ -26,7 +26,7 @@ export default function Gallery() {
         <h1 className='title'>Galley</h1>
         <Grid container spacing={5}>
           <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
               sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
@@ -38,7 +38,7 @@ export default function Gallery() {
             </div>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
               sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
@@ -50,7 +50,7 @@ export default function Gallery() {
             </div>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
               sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
@@ -62,7 +62,7 @@ export default function Gallery() {
             </div>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' />
+            <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
               sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
