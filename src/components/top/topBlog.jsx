@@ -164,24 +164,19 @@ const StyledLink = styled(Link)`
   font-size: 1rem;
   padding-bottom: 5px;
   border-bottom: 1px solid #abbcc1;
-  transition: 0.3s;
+  transition: 0.5s;
   overflow: hidden;
   ::before {
-    content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background: #efefef;
-    transition: transform 0.3s;
-    right: auto;
-    bottom: auto;
+    content: '';
     width: 120%;
     height: 100%;
+    background-color: #efefef;
+    left: 0;
+    transition: transform 0.5s;
     transform-origin: right top;
     transform: skewX(-30deg) scale(0, 1);
+    z-index: -1;
   }
   :hover {
     ::before {
