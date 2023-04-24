@@ -55,11 +55,13 @@ const StyledHeader = styled('header')`
     max-width: 200px;
     height: auto;
     padding: 16px;
+    z-index: 1;
   }
   .icon_button {
     position: fixed;
     right: 0;
     padding: 12px;
+    z-index: 1;
     .menu-icon {
       font-size: 3rem;
       color: ${({ props }) => (props.isSpecified ? props.color : `#333333`)};
