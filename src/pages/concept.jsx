@@ -50,7 +50,7 @@ export default function Concept() {
 
 const StyledMain = styled('main')`
   display: flex;
-  background-color: #000;
+  background-color: #333;
   > div {
     width: 50%;
     align-self: center;
