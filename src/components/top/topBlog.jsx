@@ -151,6 +151,19 @@ const StyledWrapper = styled('div')`
       border-radius: 50%;
     }
   }
+  @media screen and (max-width: 428px) {
+    .title_wrapper {
+      font-size: 45px;
+      letter-spacing: 0.03em;
+    }
+    .grid_item {
+      padding: 0;
+      margin: 15px 0 45px;
+    }
+    .img {
+      height: 150px;
+    }
+  }
 `;
 
 const StyledLink = styled(Link)`
