@@ -1,6 +1,8 @@
 // Next.js
 import Image from 'next/image';
 import Link from 'next/link';
+// components
+import { GalleryCarousel } from 'src/components/common/carousel/galleryCarousel';
 // style
 import styled from '@emotion/styled';
 // material-ui
@@ -14,6 +16,7 @@ export function TopGallery() {
       <div className='contents'>
         <h1 className='title_wrapper'>GALLERY</h1>
         <div className='description'>ギャラリーの説明</div>
+        <GalleryCarousel />
         <StyledLink href={'/gallery'}>VIEW MORE</StyledLink>
       </div>
     </StyledWrapper>
