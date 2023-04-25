@@ -56,7 +56,7 @@ const StyledImage = styled(Image)`
     height: auto;
     object-position: center;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     height: 100vh;
     object-position: right -280px top 0px;
   }
