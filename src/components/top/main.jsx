@@ -6,6 +6,7 @@ import { TopNews } from 'src/components/top/topNews';
 import { TopContents } from 'src/components/top/topContents';
 import { TopColor } from 'src/components/top/topColor';
 import { TopBlog } from 'src/components/top/topBlog';
+import { TopGallery } from 'src/components/top/topGallery';
 
 // style
 import styled from '@emotion/styled';
@@ -42,6 +43,7 @@ export function Main() {
         <TopNews />
         <TopContents />
         <TopBlog />
+        <TopGallery />
       </StyledContainer>
       {/* <TopColor /> */}
     </StyledMain>
