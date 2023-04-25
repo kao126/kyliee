@@ -87,7 +87,7 @@ const StyledMain = styled('main')`
       padding: 5px 0;
     }
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     .top_image {
       width: 100%;
       height: 100vh;

@@ -62,7 +62,7 @@ const StyledDrawer = styled(Drawer)`
     height: auto;
     margin: 20px auto;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     .MuiDrawer-paper {
       width: 75%;
       padding: 0 20px;
@@ -104,7 +104,7 @@ const StyledList = styled(List)`
       }
     }
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     padding: 30px 20px;
   }
 `;

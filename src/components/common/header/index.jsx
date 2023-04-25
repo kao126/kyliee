@@ -67,7 +67,7 @@ const StyledHeader = styled('header')`
       color: ${({ props }) => (props.isSpecified ? props.color : `#333333`)};
     }
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     .logo {
       padding: 16px 8px;
     }

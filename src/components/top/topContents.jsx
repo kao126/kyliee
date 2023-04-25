@@ -64,7 +64,7 @@ const StyledWrapper = styled('div')`
     padding-bottom: 5px;
     border-bottom: 1px solid #abbcc1;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     display: block;
     margin: 50px 0 80px;
     .content {
@@ -88,7 +88,7 @@ const StyledImage = styled(Image)`
   max-width: 50%;
   height: auto;
   object-fit: cover;
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     max-width: 100%;
   }
 `;

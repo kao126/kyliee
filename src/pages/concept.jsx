@@ -84,7 +84,7 @@ const StyledMain = styled('main')`
       }
     }
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     .title {
       margin-top: 160px;
     }
