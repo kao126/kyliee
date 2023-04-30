@@ -1,21 +1,36 @@
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Inter } from '@next/font/google';
 
 // components
 import { Header } from 'src/components/common/header';
 import { SimpleFooter } from 'src/components/common/footer/simpleFooter';
+// modules
+import { getZennArticles } from 'src/rss/rss-parser.mjs';
+// import { getZennRssFeed } from 'src/modules/zenn';
+import { getZennRssFeed } from 'src/rss/rss-parser.mjs';
+// import { getZennRssFeed } from 'src/pages/api/hello';
+import Parser from 'rss-parser';
+
 // material-ui
 import { Grid, Typography } from '@mui/material';
 // styles
-
-import NoImage from 'public/images/NO_IMAGE.jpg';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Blog() {
+export default function Blog({ res }) {
+  const [articles, setArticles] = useState([]);
+  console.log(articles.items);
+  console.log(res);
+
+  useEffect(() => {
+    setArticles(res);
+  }, []);
+
   return (
     <>
       <Head>
@@ -27,11 +42,11 @@ export default function Blog() {
         <Grid container className='grid_container'>
           <Grid item xs={12} md={6} className='grid_item'>
             <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img_title'>１つ目の記事</Typography>
+            <Typography className='img_title'>{articles.items && articles.items[0].title}</Typography>
             <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
+              <time dateTime='2023-4-3'>{articles.items && articles.items[0].pubDate}</time>
             </Typography>
-            <Link href={'/'} className='link'>
+            <Link href={`${articles.items && articles.items[0].link}`} className='link'>
               ＋ 本文を読む
             </Link>
           </Grid>
@@ -70,6 +85,24 @@ export default function Blog() {
       <SimpleFooter />
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const parser = new Parser();
+  const res = await parser.parseURL('https://zenn.dev/kao126/feed?all=1');
+  console.log(res);
+  // const res = await fetch('https://zenn.dev/kao126/feed?all=1');
+  // const posts = await res.json();
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      res,
+    },
+  };
 }
 
 const StyledMain = styled('main')`
