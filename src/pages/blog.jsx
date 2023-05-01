@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Inter } from '@next/font/google';
-
+import Parser from 'rss-parser';
 // components
 import { Header } from 'src/components/common/header';
 import { SimpleFooter } from 'src/components/common/footer/simpleFooter';
@@ -15,11 +15,11 @@ import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Blog({ res }) {
+export default function Blog({ response }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    setArticles(res);
+    setArticles(response.items);
   }, []);
 
   return (
@@ -80,9 +80,10 @@ export default function Blog({ res }) {
 
 export async function getStaticProps() {
   const parser = new Parser();
+  const response = await parser.parseURL('https://zenn.dev/kao126/feed?all=1');
   return {
     props: {
-      res,
+      response,
     },
   };
 }
