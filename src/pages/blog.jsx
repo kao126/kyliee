@@ -34,46 +34,18 @@ export default function Blog({ response }) {
       <StyledMain>
         <h1 className='title'>Blog</h1>
         <Grid container className='grid_container'>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img_title'>{articles.items && articles.items[0].title}</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>{articles.items && articles.items[0].pubDate}</time>
-            </Typography>
-            <Link href={`${articles.items && articles.items[0].link}`} className='link'>
-              ＋ 本文を読む
-            </Link>
-          </Grid>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img_title'>２つ目の記事</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
-            </Typography>
-            <Link href={'/'} className='link'>
-              ＋ 本文を読む
-            </Link>
-          </Grid>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img_title'>３つ目の記事</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
-            </Typography>
-            <Link href={'/'} className='link'>
-              ＋ 本文を読む
-            </Link>
-          </Grid>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img_title'>４つ目の記事</Typography>
-            <Typography className='img_date'>
-              <time dateTime='2023-4-3'>2023.04.03</time>
-            </Typography>
-            <Link href={'/'} className='link'>
-              ＋ 本文を読む
-            </Link>
-          </Grid>
+          {articles.map((article, i) => (
+            <Grid item xs={12} md={6} className='grid_item' key={i}>
+              <img src={article.enclosure.url || NoImage.src} className='img' alt='記事トップ画像' />
+              <Typography className='img_title'>{article.title}</Typography>
+              <Typography className='img_date'>
+                <time dateTime={`${formatDate(new Date(article.pubDate), 'yyyy-MM-dd')}`}>{formatDate(new Date(article.pubDate), 'yyyy.MM.dd')}</time>
+              </Typography>
+              <Link href={`${article.link}`} className='link'>
+                ＋ 本文を読む
+              </Link>
+            </Grid>
+          ))}
         </Grid>
       </StyledMain>
       <SimpleFooter />
@@ -110,10 +82,10 @@ const StyledMain = styled('main')`
   }
   .img {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 40/21;
     border: thin solid lightgray;
     margin-bottom: 25px;
-    object-fit: cover;
+    object-fit: contain;
   }
   .img_title {
     color: #333;
