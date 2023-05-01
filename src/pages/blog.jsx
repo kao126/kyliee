@@ -7,6 +7,8 @@ import Parser from 'rss-parser';
 // components
 import { Header } from 'src/components/common/header';
 import { SimpleFooter } from 'src/components/common/footer/simpleFooter';
+// hooks
+import { useDateFormat } from 'src/hooks/useDateFormat';
 // material-ui
 import { Grid, Typography } from '@mui/material';
 // styles
@@ -16,6 +18,7 @@ import NoImage from 'public/images/NO_IMAGE.jpg';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Blog({ response }) {
+  const { formatDate } = useDateFormat();
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
