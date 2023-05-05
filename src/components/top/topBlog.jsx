@@ -21,8 +21,8 @@ export function TopBlog({ response }) {
         <h1 className='title_wrapper'>BLOG</h1>
         <div className='description'>ブログの説明</div>
         <Grid container className='grid_container'>
-          {displayArticles.map((article) => (
-            <Grid item xs={12} md={6} className='grid_item'>
+          {displayArticles.map((article, i) => (
+            <Grid item xs={12} md={6} className='grid_item' key={i}>
               <Card elevation={5} className='card'>
                 <Link href={`${article.link}`} className='link'>
                   <img src={article.enclosure.url || NoImage.src} className='img' alt='イメージ画像' />
