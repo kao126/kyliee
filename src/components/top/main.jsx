@@ -20,7 +20,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 // image
 import topImage from 'public/images/TOP_01.jpg';
 
-export function Main() {
+export function Main({ response }) {
   return (
     <StyledMain>
       <div className='sns-area'>
@@ -42,7 +42,7 @@ export function Main() {
       <StyledContainer>
         <TopNews />
         <TopContents />
-        <TopBlog />
+        <TopBlog response={response} />
         <TopGallery />
       </StyledContainer>
       {/* <TopColor /> */}
