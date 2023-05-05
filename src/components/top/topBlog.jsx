@@ -1,6 +1,7 @@
 // Next.js
-import Image from 'next/image';
 import Link from 'next/link';
+// hooks
+import { useDateFormat } from 'src/hooks/useDateFormat';
 // style
 import styled from '@emotion/styled';
 // material-ui
@@ -8,35 +9,31 @@ import { Card, Grid, Typography } from '@mui/material';
 // images
 import NoImage from 'public/images/NO_IMAGE.jpg';
 
-export function TopBlog() {
+export function TopBlog({ response }) {
+  const { formatDate } = useDateFormat();
+
+  const displayArticles = response.items.filter((_, i) => i <= 1);
+  console.log(displayArticles);
+
   return (
     <StyledWrapper>
       <div className='contents'>
         <h1 className='title_wrapper'>BLOG</h1>
         <div className='description'>ブログの説明</div>
         <Grid container className='grid_container'>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Card elevation={5} className='card'>
-              <Link href={'/'} className='link'>
-                <Image src={NoImage} className='img' alt='イメージ画像' />
-                <Typography className='img_title'>１つ目の記事</Typography>
-                <Typography className='img_date'>
-                  <time dateTime='2023-4-3'>2023.04.03</time>
-                </Typography>
-              </Link>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={6} className='grid_item'>
-            <Card elevation={5} className='card'>
-              <Link href={'/'} className='link'>
-                <Image src={NoImage} className='img' alt='イメージ画像' />
-                <Typography className='img_title'>２つ目の記事</Typography>
-                <Typography className='img_date'>
-                  <time dateTime='2023-4-3'>2023.04.03</time>
-                </Typography>
-              </Link>
-            </Card>
-          </Grid>
+          {displayArticles.map((article) => (
+            <Grid item xs={12} md={6} className='grid_item'>
+              <Card elevation={5} className='card'>
+                <Link href={`${article.link}`} className='link'>
+                  <img src={article.enclosure.url || NoImage.src} className='img' alt='イメージ画像' />
+                  <Typography className='img_title'>{article.title}</Typography>
+                  <Typography className='img_date'>
+                    <time dateTime={`${formatDate(new Date(article.pubDate), 'yyyy-MM-dd')}`}>{formatDate(new Date(article.pubDate), 'yyyy.MM.dd')}</time>
+                  </Typography>
+                </Link>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
         <StyledLink href={'/blog'}>VIEW MORE</StyledLink>
       </div>
@@ -70,10 +67,8 @@ const StyledWrapper = styled('div')`
   }
   .img {
     width: 100%;
-    height: 300px;
     border: thin solid lightgray;
     margin-bottom: 25px;
-    object-fit: cover;
   }
   .img_title {
     color: #333;
