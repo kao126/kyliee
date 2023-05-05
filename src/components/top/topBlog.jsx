@@ -139,13 +139,13 @@ const StyledWrapper = styled('div')`
     position: relative;
     text-decoration: none;
     color: #333;
+    display: block;
     ::after {
       position: absolute;
       content: '';
-      display: block;
       width: 50px;
       height: 50px;
-      top: 30px;
+      bottom: 9px;
       right: 7px;
       background-color: #333;
       border-radius: 50%;
