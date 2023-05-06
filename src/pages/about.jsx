@@ -30,23 +30,17 @@ export default function About() {
             大嶋 捷稔 <span className='en_name'>Kanaru Oshima</span>
           </h1>
           <div>
-            <p>
-              趣味 / 最近ハマっていること <span className='en_name'>What I am into</span>
-            </p>
+            <p className='bold'>趣味</p>
             <p>音楽探し、ジムでの筋トレと柔軟、アニメ鑑賞、ポッドキャストを聴きながら散歩すること</p>
           </div>
           <div>
-            <p>
-              経歴　<span className='en_name'>Career</span>
-            </p>
+            <p className='bold'>経歴</p>
             <p>2020年4月~2022年3月 営業</p>
             <p>2022年4月~7月 プログラミングスクール</p>
             <p>2022年10月~ 現職</p>
           </div>
           <div>
-            <p>
-              スキル <span className='en_name'>Skill</span>
-            </p>
+            <p className='bold'>スキル</p>
             <p>HTML CSS React(Redux) / Ruby on Rails(Ruby) AWS</p>
             <p>グラフで書こうかな（習得度などを表せるように）</p>
           </div>
@@ -71,5 +65,34 @@ const StyledMain = styled('main')`
   .en_name {
     font-size: 24px;
     opacity: 0.6;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  @media screen and (max-width: 768px) {
+    display: inherit;
+    padding-top: 80px;
+    text-align: center;
+    .img {
+      width: 80%;
+    }
+    .contents {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 428px) {
+    display: inherit;
+    padding-top: 80px;
+    .img {
+      width: 100%;
+    }
+    .contents {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .en_name {
+      display: block;
+    }
   }
 `;
