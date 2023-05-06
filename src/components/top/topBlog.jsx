@@ -13,7 +13,6 @@ export function TopBlog({ response }) {
   const { formatDate } = useDateFormat();
 
   const displayArticles = response.items.filter((_, i) => i <= 1);
-  console.log(displayArticles);
 
   return (
     <StyledWrapper>
