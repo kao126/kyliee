@@ -30,18 +30,25 @@ export default function About() {
             大嶋 捷稔 <span className='en_name'>Kanaru Oshima</span>
           </h1>
           <div>
+            <p className='bold'>経歴</p>
+            <p>
+              神奈川県横浜市出身のエンジニア。大学で国際経済学を学んだのち、ICTシステムを開発/販売している会社で営業に従事。その後ITの技術に惹かれ、25才でシステムエンジニアへ転職。事業会社のフルスタックエンジニアとしてキャリアをスタートし、React(Redux),Ruby
+              on Rails,AWS(EC2,S3等)を用いたWebアプリ開発/保守/運用など、インフラからフロントサイドまで幅広く業務を経験してきました。
+            </p>
+          </div>
+          {/* <div>
+            <p className='bold'>経歴</p>
+            <p>2022年3月末 営業</p>
+            <p>2022年4月~9月 プログラミングスクール & 転職活動</p>
+            <p>2022年10月~ 事業会社 フルスタックエンジニア（現職）</p>
+          </div> */}
+          <div>
             <p className='bold'>趣味</p>
             <p>音楽探し、ジムでの筋トレと柔軟、アニメ鑑賞、ポッドキャストを聴きながら散歩すること</p>
           </div>
           <div>
-            <p className='bold'>経歴</p>
-            <p>2020年4月~2022年3月 営業</p>
-            <p>2022年4月~7月 プログラミングスクール</p>
-            <p>2022年10月~ 現職</p>
-          </div>
-          <div>
             <p className='bold'>スキル</p>
-            <p>HTML CSS React(Redux) / Ruby on Rails(Ruby) AWS</p>
+            <p>React(Redux), Ruby on Rails(Ruby), AWS, HTML5, CSS3 </p>
             <p>グラフで書こうかな（習得度などを表せるように）</p>
           </div>
         </div>
