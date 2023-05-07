@@ -24,8 +24,24 @@ export default function Gallery() {
       <Header />
       <StyledMain>
         <h1 className='title'>Galley</h1>
-        <Grid container spacing={5}>
-          <Grid item xs={12} md={6} lg={4}>
+        <Grid container>
+          <Grid item xs={12} md={6}>
+            <div className='item'>
+              <img src={NoImage.src} className='img' alt='イメージ画像' />
+              <Link href={'/gallery'} className='gallery'>
+                <p className='item-title'>タイトル１</p>
+              </Link>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <div className='item'>
+              <img src={NoImage.src} className='img' alt='イメージ画像' />
+              <Link href={'/'} className='gallery'>
+                <p className='item-title'>タイトル１</p>
+              </Link>
+            </div>
+          </Grid>
+          {/* <Grid item xs={12} md={6} lg={4}>
             <Image src={NoImage} className='img' alt='イメージ画像' />
             <Typography className='img-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
@@ -36,43 +52,7 @@ export default function Gallery() {
                 more
               </Link>
             </div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img-description'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
-              sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
-            </Typography>
-            <div className='link'>
-              <Link href={'/'} className='more'>
-                more
-              </Link>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img-description'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
-              sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
-            </Typography>
-            <div className='link'>
-              <Link href={'/'} className='more'>
-                more
-              </Link>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Image src={NoImage} className='img' alt='イメージ画像' />
-            <Typography className='img-description'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut hic eius suscipit quasi adipisci earum laboriosam perspiciatis error tempora quae praesentium
-              sit, facere nostrum reprehenderit quaerat, blanditiis fugit culpa.
-            </Typography>
-            <div className='link'>
-              <Link href={'/'} className='more'>
-                more
-              </Link>
-            </div>
-          </Grid>
+          </Grid> */}
         </Grid>
       </StyledMain>
       <SimpleFooter />
@@ -81,12 +61,45 @@ export default function Gallery() {
 }
 
 const StyledMain = styled('main')`
-  width: 60%;
+  width: 80%;
+  max-width: 1140px;
   margin: 0 auto;
+  padding: 120px 0 0;
   .title {
     text-align: center;
   }
+  .item {
+    position: relative;
+    padding: 15px;
+    .gallery {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      :hover {
+        opacity: 1;
+        text-decoration: none;
+        background: rgba(0, 0, 0, 0.5);
+        .item-title {
+          position: absolute;
+          bottom: 30px;
+          left: 50px;
+          color: #fff;
+        }
+      }
+    }
+  }
   .img {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: thin solid lightgray;
+    z-index: -1;
+  }
+  /* .img {
     width: 100%;
     height: auto;
     border: thin solid lightgray;
@@ -112,5 +125,5 @@ const StyledMain = styled('main')`
         text-decoration: underline;
       }
     }
-  }
+  } */
 `;
