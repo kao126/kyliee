@@ -13,7 +13,7 @@ const GalleryModal = ({ open, handleModal }) => {
             <span className='title'>title</span>
           </div>
           <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit dolore
+            サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit dolore
             dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.
           </div>
           <div className='title-bar'>
