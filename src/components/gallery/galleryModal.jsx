@@ -13,7 +13,7 @@ const GalleryModal = ({ open, handleModal }) => {
           <div className='title-bar'>
             <span className='title'>title</span>
           </div>
-          <div>
+          <div className='explanation'>
             サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit
             dolore dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.
           </div>
@@ -77,6 +77,19 @@ const StyledWrapper = styled('div')`
   }
   .img-wrapper {
     width: 50%;
+  }
+  @media screen and (max-width: 428px) {
+    flex-direction: column;
+    width: 90%;
+    .description {
+      width: 100%;
+    }
+    .explanation {
+      margin: 10px 0 20px;
+    }
+    .img-wrapper {
+      width: 100%;
+    }
   }
 `;
 export default GalleryModal;
