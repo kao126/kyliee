@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Modal } from '@mui/material';
 import React from 'react';
 import NoImage from 'public/images/NO_IMAGE.jpg';
+import { TempCarousel } from 'src/components/common/carousel/tempCarousel';
 
 const GalleryModal = ({ open, handleModal }) => {
   // データを違うファイルにまとめてidなどで判別してモーダルは共通化する
@@ -13,8 +14,8 @@ const GalleryModal = ({ open, handleModal }) => {
             <span className='title'>title</span>
           </div>
           <div>
-            サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit dolore
-            dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.
+            サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit
+            dolore dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.
           </div>
           <div className='title-bar'>
             <span className='subtitle'>使用言語など</span>
@@ -22,22 +23,27 @@ const GalleryModal = ({ open, handleModal }) => {
           <p>Ruby on Rails, HTML/CSS(SASS), Bulma, jQuery, Sqlite（開発）, Postgresql（本番）, Heroku, SendGrid</p>
         </div>
         <div className='img-wrapper'>
-          <img src={NoImage.src} alt='イメージ画像' className='img' />
+          {/* <img src={NoImage.src} alt='イメージ画像' className='img' /> */}
+          <TempCarousel />
         </div>
       </StyledWrapper>
     </Modal>
+    //   <Modal open={open} onClose={handleModal}>
+    //       <TempCarousel />
+    // </Modal>
   );
 };
 
 const StyledWrapper = styled('div')`
   position: absolute;
   display: flex;
+  justify-content: space-around;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 40px 30px;
-  min-width: 50%;
+  width: 70%;
   .description {
     width: 40%;
   }
@@ -70,10 +76,7 @@ const StyledWrapper = styled('div')`
     }
   }
   .img-wrapper {
-    width: 60%;
-    .img {
-      width: 100%;
-    }
+    width: 50%;
   }
 `;
 export default GalleryModal;
