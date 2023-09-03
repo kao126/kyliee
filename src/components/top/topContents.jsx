@@ -45,7 +45,7 @@ const StyledWrapper = styled('div')`
     margin: auto;
   }
   .title {
-    font-size: 90px;
+    font-size: 7vw;
     line-height: 1.3;
     letter-spacing: 0.12em;
     margin: 0;
