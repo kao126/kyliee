@@ -28,7 +28,7 @@ const StyledWrapper = styled('div')`
   margin-bottom: 100px;
   .title_wrapper {
     text-align: center;
-    font-size: 90px;
+    font-size: 7vw;
     line-height: 1.3;
     letter-spacing: 0.12em;
     margin: 0;
@@ -37,7 +37,6 @@ const StyledWrapper = styled('div')`
   @media screen and (max-width: 1024px) {
     margin-bottom: 80px;
     .title_wrapper {
-      font-size: 45px;
       letter-spacing: 0.03em;
     }
   }
