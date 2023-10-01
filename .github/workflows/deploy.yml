@@ -25,7 +25,7 @@ jobs:
           
       - name: Update
         run: 
-          yarn
+          yarn install
           yarn build # 投稿内容を更新
       
       - name: Deploy to Vercel
