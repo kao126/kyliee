@@ -24,7 +24,9 @@ jobs:
           node-version: '18'
           
       - name: Update
-        run: yarn build # 投稿内容を更新
+        run: 
+          yarn
+          yarn build # 投稿内容を更新
       
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
