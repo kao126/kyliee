@@ -16,26 +16,27 @@ export function TopBlog({ response }) {
 
   return (
     <StyledWrapper>
-      <div className='contents'>
-        <h1 className='title_wrapper'>BLOG</h1>
-        <div className='description'>ブログの説明</div>
-        <Grid container className='grid_container'>
-          {displayArticles.map((article, i) => (
-            <Grid item xs={12} md={6} className='grid_item' key={i}>
-              <Card elevation={5} className='card'>
-                <Link href={`${article.link}`} className='link'>
-                  <img src={article.enclosure.url || NoImage.src} className='img' alt='イメージ画像' />
-                  <Typography className='img_title'>{article.title}</Typography>
-                  <Typography className='img_date'>
+      <h1 className='title_wrapper'>BLOG</h1>
+      <div className='description'>技術に関する記事</div>
+      <Grid container className='grid_container'>
+        {displayArticles.map((article, i) => (
+          <Grid item xs={12} md={6} className='grid_item' key={i}>
+            <Card elevation={5} className='card'>
+              <Link href={`${article.link}`} className='link'>
+                <img src={article.enclosure.url || NoImage.src} className='img' alt='イメージ画像' />
+                <Typography className='img_title'>{article.title}</Typography>
+                <div className='content'>
+                  <Typography>
                     <time dateTime={`${formatDate(new Date(article.pubDate), 'yyyy-MM-dd')}`}>{formatDate(new Date(article.pubDate), 'yyyy.MM.dd')}</time>
                   </Typography>
-                </Link>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-        <StyledLink href={'/blog'}>VIEW MORE</StyledLink>
-      </div>
+                  <span className='content-btn'></span>
+                </div>
+              </Link>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+      <StyledLink href={'/blog'}>VIEW MORE</StyledLink>
     </StyledWrapper>
   );
 }
@@ -50,6 +51,9 @@ const StyledWrapper = styled('div')`
     letter-spacing: 0.12em;
     margin: 0;
     color: #333333;
+  }
+  .description {
+    text-align: center;
   }
   .grid_container {
     max-width: 1200px;
@@ -69,6 +73,10 @@ const StyledWrapper = styled('div')`
     border: thin solid lightgray;
     margin-bottom: 25px;
   }
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
   .img_title {
     color: #333;
     font-size: 1.2rem;
@@ -76,7 +84,17 @@ const StyledWrapper = styled('div')`
     line-height: 1.7;
     margin-bottom: 10px;
   }
-  .img_date {
+  .link {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  .content-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
     position: relative;
     ::before {
       position: absolute;
@@ -84,8 +102,8 @@ const StyledWrapper = styled('div')`
       background-color: #fff;
       width: 16px;
       height: 1px;
-      top: -9.5px;
-      right: 30px;
+      top: 50%;
+      right: 43%;
       z-index: 1;
     }
     ::after {
@@ -93,56 +111,9 @@ const StyledWrapper = styled('div')`
       content: '▷';
       font-size: 20px;
       color: #fff;
-      top: -23px;
-      right: 17px;
+      top: 23%;
+      right: 20%;
       z-index: 1;
-    }
-    /* ::before {
-      position: absolute;
-      content: '';
-      background-color: #fff;
-      width: 15px;
-      height: 1px;
-      top: -9px;
-      right: 30px;
-      z-index: 1;
-    }
-    ::after {
-      position: absolute;
-      content: '';
-      width: 0;
-      height: 0;
-      top: -14px;
-      right: 21px;
-      z-index: 1;
-      border-style: solid;
-      border-width: 5.5px 0px 5.5px 7.5px;
-      border-color: transparent transparent transparent #fff;
-    } */
-    /* ::before {
-      position: absolute;
-      content: '▷';
-      color: #fff;
-      font-size: 28px;
-      top: -28px;
-      right: 16px;
-      z-index: 1;
-    } */
-  }
-  .link {
-    position: relative;
-    text-decoration: none;
-    color: #333;
-    display: block;
-    ::after {
-      position: absolute;
-      content: '';
-      width: 50px;
-      height: 50px;
-      bottom: 9px;
-      right: 7px;
-      background-color: #333;
-      border-radius: 50%;
     }
   }
   @media screen and (max-width: 1024px) {
