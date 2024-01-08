@@ -42,6 +42,11 @@ export function SideDrawer({ open, handleDrawer }) {
             Gallery<span>作品集</span>
           </Link>
         </ListItem>
+        <ListItem disablePadding>
+          <Link href={'https://lin.ee/FkaCz2K'}>
+            Contact<span>お問い合わせ</span>
+          </Link>
+        </ListItem>
         <Divider />
         <ListItem disablePadding>
           <Image src={LogoMark} alt='logo' className='logo' />
