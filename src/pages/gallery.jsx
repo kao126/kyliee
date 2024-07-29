@@ -15,9 +15,34 @@ import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const galleryDataLists = [
+  {
+    id: 1,
+    title: 'Kn_Bn',
+    explanation:
+      'This is ToDo management app. You can manage your tasks on the Kanban Board for free. You will see how your tasks progress.',
+    language: 'Next.js _ 14.2.4 \n react _ 18.3.1 \n typescript _ 5.5.3',
+    url: 'https://kn-bn.vercel.app/',
+    github: 'https://github.com/kao126/Kn_Bn',
+  },
+  {
+    id: 2,
+    title: 'title',
+    explanation:
+      'サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit dolore dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.',
+    language:
+      'Ruby on Rails, HTML/CSS(SASS), Bulma, jQuery, Sqlite（開発）, Postgresql（本番）, Heroku, SendGrid',
+    url: 'https://kyliee.vercel.app/',
+    github: 'https://github.com/kao126/kyliee',
+  },
+];
+
 export default function Gallery() {
   const [open, setOpen] = useState(false);
-  const handleModal = () => {
+  const [galleryData, setGalleryData] = useState(null);
+  const handleModal = (id) => {
+    const targetGalleryData = galleryDataLists.find((data) => data.id === id);
+    setGalleryData(targetGalleryData);
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -28,28 +53,34 @@ export default function Gallery() {
       </Head>
       <Header />
       <StyledMain>
-        <h1 className='title'>Galley</h1>
+        <h1 className="title">Galley</h1>
         <Grid container>
           <Grid item xs={12} md={6}>
-            <div className='item'>
-              <img src={NoImage.src} className='img' alt='イメージ画像' />
-              <Box className='gallery' onClick={handleModal}>
-                <p className='item-title'>タイトル１</p>
+            <div className="item">
+              <img src={NoImage.src} className="img" alt="イメージ画像" />
+              <Box className="gallery" onClick={() => handleModal(1)}>
+                <p className="item-title">Kn_Bn</p>
               </Box>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <div className='item'>
-              <img src={NoImage.src} className='img' alt='イメージ画像' />
-              <Box className='gallery' onClick={handleModal}>
-                <p className='item-title'>タイトル１</p>
+            <div className="item">
+              <img src={NoImage.src} className="img" alt="イメージ画像" />
+              <Box className="gallery" onClick={() => handleModal(2)}>
+                <p className="item-title">タイトル１</p>
               </Box>
             </div>
           </Grid>
         </Grid>
       </StyledMain>
       <SimpleFooter />
-      <GalleryModal open={open} handleModal={handleModal} />
+      {galleryData && (
+        <GalleryModal
+          open={open}
+          handleModal={handleModal}
+          galleryData={galleryData}
+        />
+      )}
     </>
   );
 }
