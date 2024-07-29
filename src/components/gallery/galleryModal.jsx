@@ -3,26 +3,32 @@ import { Modal } from '@mui/material';
 import React from 'react';
 import NoImage from 'public/images/NO_IMAGE.jpg';
 import { TempCarousel } from 'src/components/common/carousel/tempCarousel';
+import Link from 'next/link';
+import LinkIcon from '@mui/icons-material/Link';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
-const GalleryModal = ({ open, handleModal }) => {
+const GalleryModal = ({ open, handleModal, galleryData }) => {
   // データを違うファイルにまとめてidなどで判別してモーダルは共通化する
   return (
     <Modal open={open} onClose={handleModal}>
       <StyledWrapper>
-        <div className='description'>
-          <div className='title-bar'>
-            <span className='title'>title</span>
+        <div className="description">
+          <div className="title-bar">
+            <span className="title">{galleryData.title}</span>
           </div>
-          <div className='explanation'>
-            サイト説明。Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquam, praesentium error itaque incidunt mollitia placeat porro, pariatur eveniet fugit
-            dolore dolorum! Aperiam cupiditate libero minus omnis dicta! Veniam, dolor.
+          <div className="explanation">{galleryData.explanation}</div>
+          <div className="title-bar">
+            <span className="subtitle">使用言語など</span>
           </div>
-          <div className='title-bar'>
-            <span className='subtitle'>使用言語など</span>
-          </div>
-          <p>Ruby on Rails, HTML/CSS(SASS), Bulma, jQuery, Sqlite（開発）, Postgresql（本番）, Heroku, SendGrid</p>
+          <p className="language">{galleryData.language}</p>
+          <Link href={galleryData.url}>
+            <LinkIcon />
+          </Link>
+          <Link href={galleryData.github}>
+            <GitHubIcon />
+          </Link>
         </div>
-        <div className='img-wrapper'>
+        <div className="img-wrapper">
           {/* <img src={NoImage.src} alt='イメージ画像' className='img' /> */}
           <TempCarousel />
         </div>
@@ -74,6 +80,9 @@ const StyledWrapper = styled('div')`
       height: 1px;
       top: 50%;
     }
+  }
+  .language {
+    white-space: pre-line;
   }
   .img-wrapper {
     width: 50%;
