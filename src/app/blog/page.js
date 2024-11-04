@@ -1,12 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
+// Next.js
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
-import Parser from 'rss-parser';
-// components
-import { Header } from 'src/components/common/header';
-import { SimpleFooter } from 'src/components/common/footer/simpleFooter';
 // hooks
 import { useDateFormat } from 'src/hooks/useDateFormat';
 // material-ui
@@ -40,7 +36,6 @@ export default function Blog() {
 
   return (
     <>
-      <Header />
       <StyledMain>
         <h1 className='title'>Blog</h1>
         <Grid container className='grid_container'>
@@ -58,7 +53,6 @@ export default function Blog() {
           ))}
         </Grid>
       </StyledMain>
-      <SimpleFooter />
     </>
   );
 }

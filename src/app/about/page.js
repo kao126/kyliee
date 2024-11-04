@@ -1,16 +1,10 @@
 'use client';
+// Next.js
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 
 // style
-// import "../styles/globals.css";
-import styles from 'src/styles/Home.module.css';
-
-// components
-import { Header } from 'src/components/common/header';
-import { Footer } from 'src/components/common/footer';
 import styled from '@emotion/styled';
-
 import selfImage from 'public/images/default-image.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,7 +12,6 @@ const inter = Inter({ subsets: ['latin'] });
 export default function About() {
   return (
     <>
-      <Header />
       <StyledMain>
         {/* スキルについて記載したい。 使用歴と言語 あとは、趣味 経歴 */}
         <Image src={selfImage} alt='icon' className='img' />
@@ -50,7 +43,6 @@ export default function About() {
           </div>
         </div>
       </StyledMain>
-      <Footer />
     </>
   );
 }

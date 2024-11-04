@@ -1,16 +1,12 @@
 'use client';
-// components
-import { Header } from 'src/components/common/header';
-import { Footer } from 'src/components/common/footer';
-// material-ui
+// Next.js
+import Link from 'next/link';
 // styles
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 export default function News() {
   return (
     <>
-      <Header />
       <StyledNews id='news'>
         <h1 className='title_wrapper'>
           News<span className='title_jp'>ニュース情報</span>
@@ -41,7 +37,6 @@ export default function News() {
           {/* <KeyboardArrowRightIcon /> */}
         </Link>
       </StyledNews>
-      <Footer />
     </>
   );
 }

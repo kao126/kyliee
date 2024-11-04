@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 // components
 import { Header } from 'src/components/common/header';
-import { Footer } from 'src/components/common/footer';
 import { SideDrawer } from 'src/components/common/sideDrawer';
 // import { PageContainer } from 'src/components/common/pageContainer';
 

@@ -1,16 +1,13 @@
 'use client';
-import React, { useState } from 'react';
+// Next.js
 import { Inter } from 'next/font/google';
-
+// React.js
+import { useState } from 'react';
 // style
 import styled from '@emotion/styled';
 import theme from 'src/theme';
-
 // components
-import { Header } from 'src/components/common/header';
 import { ColorModal } from 'src/components/common/colorModal';
-import { Footer } from 'src/components/common/footer';
-
 // material-ui
 import { Box, Grid, TextField } from '@mui/material';
 
@@ -22,7 +19,6 @@ export default function Colors() {
   const [secondColor, setSecondColor] = useState('');
   const [firstPicker, setFirstPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
-  console.log(firstColors);
 
   const makeGradation = (rgb) => {
     const brightenRed = (rgb.r + 3).toString(16);
@@ -74,7 +70,6 @@ export default function Colors() {
 
   return (
     <>
-      <Header />
       <StyledMain>
         <h2>Color Palette</h2>
         <Grid container className='text-container'>
