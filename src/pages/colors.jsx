@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
 import { Inter } from '@next/font/google';
 
 // style
@@ -15,6 +14,10 @@ import { Footer } from 'src/components/common/footer';
 import { Box, Grid, TextField } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'Colors',
+}
 
 export default function Colors() {
   const [firstColor, setFirstColor] = useState('');
@@ -74,9 +77,6 @@ export default function Colors() {
 
   return (
     <>
-      <Head>
-        <title>Colors</title>
-      </Head>
       <Header />
       <StyledMain>
         <h2>Color Palette</h2>

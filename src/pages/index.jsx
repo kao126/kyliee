@@ -1,5 +1,4 @@
-// Next.js
-import Head from 'next/head';
+// Next.js 
 import { useEffect, useState } from 'react';
 import Parser from 'rss-parser';
 // components
@@ -10,6 +9,10 @@ import { Footer } from 'src/components/common/footer';
 import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
 // styles
 import styled from '@emotion/styled';
+
+export const metadata = {
+  title: 'Top',
+}
 
 export default function Home({ response }) {
   const { isHeaderActive } = useHeaderScroll();
@@ -23,9 +26,6 @@ export default function Home({ response }) {
 
   return (
     <>
-      <Head>
-        <title>Top</title>
-      </Head>
       {isLoading ? (
         <StyledLoading>
           <div className='loading_border'></div>

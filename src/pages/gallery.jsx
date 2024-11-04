@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { Inter } from '@next/font/google';
 
 // components
@@ -37,6 +36,10 @@ const galleryDataLists = [
   },
 ];
 
+export const metadata = {
+  title: 'Gallery',
+}
+
 export default function Gallery() {
   const [open, setOpen] = useState(false);
   const [galleryData, setGalleryData] = useState(null);
@@ -48,9 +51,6 @@ export default function Gallery() {
 
   return (
     <>
-      <Head>
-        <title>Gallery</title>
-      </Head>
       <Header />
       <StyledMain>
         <h1 className="title">Galley</h1>

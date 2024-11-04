@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 // components
 import { Header } from 'src/components/common/header';
 import { Footer } from 'src/components/common/footer';
@@ -8,12 +6,13 @@ import { Footer } from 'src/components/common/footer';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'News',
+};
+
 export default function News() {
   return (
     <>
-      <Head>
-        <title>News</title>
-      </Head>
       <Header />
       <StyledNews id='news'>
         <h1 className='title_wrapper'>

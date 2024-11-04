@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 
 // components
@@ -19,13 +18,14 @@ import conceptImage from 'public/images/CONCEPT.jpg';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
+export const metadata = {
+  title: 'Concept',
+}
+
 export default function Concept() {
   const { open, handleDrawer } = useSideDrawer();
   return (
     <>
-      <Head>
-        <title>Concept</title>
-      </Head>
       <Header isSpecified={true} color={'#fff'} BlackPainted={false} />
       {/* <PageContainer> */}
       <StyledMain>

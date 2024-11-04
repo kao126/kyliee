@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 
@@ -15,12 +14,13 @@ import selfImage from 'public/images/default-image.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const metadata = {
+  title: 'About',
+}
+
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About</title>
-      </Head>
       <Header />
       <StyledMain>
         {/* スキルについて記載したい。 使用歴と言語 あとは、趣味 経歴 */}

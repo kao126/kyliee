@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Inter } from '@next/font/google';
@@ -17,6 +16,10 @@ import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const metadata = {
+  title: 'Blog',
+}
+
 export default function Blog({ response }) {
   const { formatDate } = useDateFormat();
   const [articles, setArticles] = useState([]);
@@ -27,9 +30,6 @@ export default function Blog({ response }) {
 
   return (
     <>
-      <Head>
-        <title>Blog</title>
-      </Head>
       <Header />
       <StyledMain>
         <h1 className='title'>Blog</h1>
