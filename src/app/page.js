@@ -1,4 +1,4 @@
-// Next.js 
+// Next.js
 import { useEffect, useState } from 'react';
 import Parser from 'rss-parser';
 // components
@@ -12,7 +12,7 @@ import styled from '@emotion/styled';
 
 export const metadata = {
   title: 'Top',
-}
+};
 
 export default function Home({ response }) {
   const { isHeaderActive } = useHeaderScroll();
