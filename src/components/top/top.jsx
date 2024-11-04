@@ -1,5 +1,5 @@
+'use client';
 import Image from 'next/image';
-
 // components
 import { Carousel } from 'src/components/common/carousel';
 import { TopNews } from 'src/components/top/topNews';
@@ -20,9 +20,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 // image
 import topImage from 'public/images/TOP_01.jpg';
 
-export function Main({ response }) {
+export function Top() {
   return (
-    <StyledMain>
+    <StyledTop>
       <div className='sns-area'>
         <p className='sns-title'>SNS</p>
         <ul className='sns-list'>
@@ -42,15 +42,15 @@ export function Main({ response }) {
       <StyledContainer>
         <TopNews />
         <TopContents />
-        <TopBlog response={response} />
+        <TopBlog />
         <TopGallery />
       </StyledContainer>
       {/* <TopColor /> */}
-    </StyledMain>
+    </StyledTop>
   );
 }
 
-const StyledMain = styled('main')`
+const StyledTop = styled('div')`
   /* background-color: ${theme.palette.background.main}; */
   background-color: #fff;
   .top_image {
