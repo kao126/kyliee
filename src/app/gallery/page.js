@@ -1,3 +1,4 @@
+'use client';
 import { Inter } from 'next/font/google';
 
 // components
@@ -36,9 +37,6 @@ const galleryDataLists = [
   },
 ];
 
-export const metadata = {
-  title: 'Gallery',
-}
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);

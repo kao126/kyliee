@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { Inter } from 'next/font/google';
 
@@ -14,10 +15,6 @@ import { Footer } from 'src/components/common/footer';
 import { Box, Grid, TextField } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'Colors',
-};
 
 export default function Colors() {
   const [firstColor, setFirstColor] = useState('');

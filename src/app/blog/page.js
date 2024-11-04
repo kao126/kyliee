@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,10 +16,6 @@ import styled from '@emotion/styled';
 import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'Blog',
-};
 
 export default function Blog({ response }) {
   const { formatDate } = useDateFormat();

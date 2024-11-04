@@ -1,3 +1,4 @@
+'use client';
 // components
 import { Header } from 'src/components/common/header';
 import { Footer } from 'src/components/common/footer';
@@ -5,10 +6,6 @@ import { Footer } from 'src/components/common/footer';
 // styles
 import styled from '@emotion/styled';
 import Link from 'next/link';
-
-export const metadata = {
-  title: 'News',
-};
 
 export default function News() {
   return (

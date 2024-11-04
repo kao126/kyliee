@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 
@@ -13,10 +14,6 @@ import styled from '@emotion/styled';
 import selfImage from 'public/images/default-image.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'About',
-};
 
 export default function About() {
   return (

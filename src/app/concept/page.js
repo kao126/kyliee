@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -18,9 +19,6 @@ import conceptImage from 'public/images/CONCEPT.jpg';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export const metadata = {
-  title: 'Concept',
-}
 
 export default function Concept() {
   const { open, handleDrawer } = useSideDrawer();
