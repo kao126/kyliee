@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { SketchPicker } from 'react-color';
 import styled from '@emotion/styled';

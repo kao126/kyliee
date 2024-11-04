@@ -1,3 +1,4 @@
+'use client';
 import styled from '@emotion/styled';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Image from 'next/image';
