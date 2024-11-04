@@ -1,3 +1,4 @@
+'use client';
 // Next.js
 import Link from 'next/link';
 // hooks

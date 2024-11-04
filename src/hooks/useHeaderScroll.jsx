@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+'use client';
+import { useEffect, useRef, useState } from 'react';
 
 export const useHeaderScroll = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false);
@@ -21,9 +22,9 @@ export const useHeaderScroll = () => {
         setIsHeaderActive(false);
       }
     };
-    window.addEventListener("scroll", scrollWindow);
+    window.addEventListener('scroll', scrollWindow);
     return () => {
-      window.removeEventListener("scroll", scrollWindow);
+      window.removeEventListener('scroll', scrollWindow);
     };
   }, []);
 

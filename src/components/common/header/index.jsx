@@ -1,6 +1,4 @@
-// React
-import { useState } from 'react';
-
+'use client';
 // Next.js
 import Image from 'next/image';
 import Link from 'next/link';
