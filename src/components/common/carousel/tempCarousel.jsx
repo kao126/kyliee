@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 // Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination, Autoplay, Thumbs } from 'swiper';
+import { FreeMode, Pagination, Autoplay, Thumbs } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';

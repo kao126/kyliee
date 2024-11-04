@@ -8,7 +8,7 @@ import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
 // Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, Autoplay } from 'swiper';
+import { Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
