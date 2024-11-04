@@ -1,4 +1,4 @@
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 // components
 import { Header } from 'src/components/common/header';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import Parser from 'rss-parser';
 // components
 import { Header } from 'src/components/common/header';
@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Blog',
-}
+};
 
 export default function Blog({ response }) {
   const { formatDate } = useDateFormat();

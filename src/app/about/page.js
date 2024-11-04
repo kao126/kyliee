@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 // style
 // import "../styles/globals.css";
@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'About',
-}
+};
 
 export default function About() {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 // style
 import styled from '@emotion/styled';
@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Colors',
-}
+};
 
 export default function Colors() {
   const [firstColor, setFirstColor] = useState('');
