@@ -17,12 +17,25 @@ import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Blog({ response }) {
+export default function Blog() {
   const { formatDate } = useDateFormat();
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    setArticles(response.items);
+    const fetchFeed = async () => {
+      try {
+        const response = await fetch('/api/rss');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setArticles(data.items);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchFeed();
   }, []);
 
   return (
@@ -48,16 +61,6 @@ export default function Blog({ response }) {
       <SimpleFooter />
     </>
   );
-}
-
-export async function getStaticProps() {
-  const parser = new Parser();
-  const response = await parser.parseURL('https://zenn.dev/kao126/feed?all=1');
-  return {
-    props: {
-      response,
-    },
-  };
 }
 
 const StyledMain = styled('main')`

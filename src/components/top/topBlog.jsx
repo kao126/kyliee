@@ -9,11 +9,30 @@ import styled from '@emotion/styled';
 import { Card, Grid, Typography } from '@mui/material';
 // images
 import NoImage from 'public/images/NO_IMAGE.jpg';
+import { useEffect, useState } from 'react';
 
-export function TopBlog({ response }) {
+export function TopBlog() {
   const { formatDate } = useDateFormat();
+  const [articles, setArticles] = useState([]);
 
-  const displayArticles = response.items.filter((_, i) => i <= 1);
+  useEffect(() => {
+    const fetchFeed = async () => {
+      try {
+        const response = await fetch('/api/rss');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setArticles(data.items);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchFeed();
+  }, []);
+
+  const displayArticles = articles.filter((_, i) => i <= 1);
 
   return (
     <StyledWrapper>
