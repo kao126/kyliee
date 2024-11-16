@@ -1,6 +1,6 @@
 // components
 import { Loading } from 'src/components/common/loading';
-import { Top } from 'src/components/top/top';
+import { Top } from 'src/components/top/index';
 
 export const metadata = {
   title: 'Top',
