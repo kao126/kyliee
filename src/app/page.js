@@ -6,10 +6,10 @@ export const metadata = {
   title: 'Top',
 };
 
-export default function Home({ response }) {
+export default function Home() {
   return (
     <Loading>
-      <Top response={response} />
+      <Top />
     </Loading>
   );
 }
