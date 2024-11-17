@@ -11,7 +11,7 @@ export const styles = {
       },
     },
   }),
-  topComponent: style({
+  topComponents: style({
     maxWidth: '1840px',
     width: '100%',
     padding: '0 10%',
