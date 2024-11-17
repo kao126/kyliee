@@ -6,7 +6,7 @@ import { TopNews } from 'src/components/top/news';
 import { TopAbout } from 'src/components/top/about';
 import { TopConcept } from 'src/components/top/concept';
 import { TopColor } from 'src/components/top/topColor';
-import { TopBlog } from 'src/components/top/topBlog';
+import { TopBlog } from 'src/components/top/blog';
 import { TopGallery } from 'src/components/top/topGallery';
 
 // style
