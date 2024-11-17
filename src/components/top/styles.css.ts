@@ -6,7 +6,7 @@ export const styles = {
     height: '100vh',
     objectFit: 'cover',
     '@media': {
-      'screen and (min-width: 468px)': {
+      'screen and (min-width: 600px)': {
         objectFit: 'contain',
       },
     },
