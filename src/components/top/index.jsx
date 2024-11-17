@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { Sns } from 'src/components/top/sns';
 import { Carousel } from 'src/components/common/carousel';
 import { TopNews } from 'src/components/top/news';
-import { TopContents } from 'src/components/top/topContents';
+import { TopAbout } from 'src/components/top/about';
+import { TopConcept } from 'src/components/top/concept';
 import { TopColor } from 'src/components/top/topColor';
 import { TopBlog } from 'src/components/top/topBlog';
 import { TopGallery } from 'src/components/top/topGallery';
@@ -22,7 +23,8 @@ export function Top() {
       <Image src={topImage} alt='トップ画像' className={styles.topImage} />
       <div className={styles.topComponents}>
         <TopNews />
-        <TopContents />
+        <TopAbout />
+        <TopConcept />
         <TopBlog />
         <TopGallery />
       </div>
