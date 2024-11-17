@@ -13,7 +13,7 @@ export const styles = {
     position: 'relative',
     letterSpacing: '0.08em',
     margin: 0,
-    ':before': {
+    '::before': {
       content: '',
       position: 'absolute',
       bottom: '-65px',
