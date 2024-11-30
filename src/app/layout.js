@@ -4,8 +4,7 @@ import 'swiper/swiper-bundle.css';
 // components
 import { Header } from 'src/components/common/header';
 import { Footer } from 'src/components/common/footer';
-// hooks
-import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
+import { Providers } from 'src/components/common/providers';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
@@ -26,17 +25,17 @@ import * as React from 'react';
 // };
 
 export default function RootLayout({ emotionCache = clientSideEmotionCache, children }) {
-  const { isHeaderActive } = useHeaderScroll();
-
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <html lang='ja'>
           <body>
-            <Header isActive={isHeaderActive} />
-            <main>{children}</main>
-            <Footer />
+            <Providers>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </Providers>
           </body>
         </html>
       </ThemeProvider>
