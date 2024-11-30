@@ -38,15 +38,15 @@ export function Footer() {
     <footer className={styles.container}>
       {hasIcon() ? (
         <>
-      <Link href={'/'}>
-        <LinkedInIcon className={styles.linkedin} />
-      </Link>
-      <Link href={'https://github.com/kao126'}>
-        <GitHubIcon className={styles.github} />
-      </Link>
-      <Link href={'https://www.wantedly.com/id/kanaru_oshima'}>
-        <Image src={Wantedly} alt='wantedly' className={styles.wantedly} />
-      </Link>
+          <Link href={'/'}>
+            <LinkedInIcon className={styles.linkedin} />
+          </Link>
+          <Link href={'https://github.com/kao126'}>
+            <GitHubIcon className={styles.github} />
+          </Link>
+          <Link href={'https://www.wantedly.com/id/kanaru_oshima'}>
+            <Image src={Wantedly} alt='wantedly' className={styles.wantedly} />
+          </Link>
         </>
       ) : null}
       <div className={styles.footerText}>© KYLIEE All Rights Reserved.</div>
