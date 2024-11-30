@@ -2,9 +2,6 @@
 // Next.js
 import Image from 'next/image';
 
-// hooks
-import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
-
 // Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';

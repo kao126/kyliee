@@ -18,12 +18,11 @@ import conceptImage from 'public/images/CONCEPT.jpg';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-
 export default function Concept() {
   const { open, handleDrawer } = useSideDrawer();
   return (
     <>
-      <Header isSpecified={true} color={'#fff'} BlackPainted={false} />
+      <Header isOpposite={true} BlackPainted={false} />
       {/* <PageContainer> */}
       <StyledMain>
         <StyledImage src={conceptImage} alt='コンセプト' />

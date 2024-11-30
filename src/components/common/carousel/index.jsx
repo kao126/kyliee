@@ -2,9 +2,6 @@
 // Next.js
 import Image from 'next/image';
 
-// hooks
-import { useHeaderScroll } from 'src/hooks/useHeaderScroll';
-
 // Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -25,7 +22,6 @@ import Image3 from 'public/images/03.webp';
 const images = [Image1, Image2, Image3];
 
 export function Carousel() {
-  const { ref } = useHeaderScroll();
 
   return (
     <Swiper
@@ -40,7 +36,7 @@ export function Carousel() {
       {images.map((image, i) => {
         return (
           <SwiperSlide key={i}>
-            <StyledImage src={image} alt={`画像${i}`} ref={ref} />
+            <StyledImage src={image} alt={`画像${i}`} />
           </SwiperSlide>
         );
       })}

@@ -5,7 +5,7 @@ import Link from 'next/link';
 // components
 import { SideDrawer } from 'src/components/common/sideDrawer';
 
-// Hooks
+// hooks
 import { useSideDrawer } from 'src/hooks/useSideDrawer';
 
 // style
@@ -19,7 +19,15 @@ import whiteLogo from 'public/images/WHITE_LOGO.png';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
+// plugin
+import { useAtomValue } from 'jotai';
+
+// atom
+import { isTopImageOnScreenAtom } from 'src/atoms/displayHeader';
+
 export function Header({ isOpposite, BlackPainted = true }) {
+  const isTopImageOnScreen = useAtomValue(isTopImageOnScreenAtom);
+  const isHeaderDisplay = isTopImageOnScreen ? styles.isNotDisplay : styles.isDisplay;
   const menuIcon = isOpposite ? styles.menuWhiteIcon : styles.menuBlackIcon;
   const { open, handleDrawer } = useSideDrawer();
 
