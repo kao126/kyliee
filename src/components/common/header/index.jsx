@@ -1,4 +1,3 @@
-'use client';
 // Next.js
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +9,9 @@ import { SideDrawer } from 'src/components/common/sideDrawer';
 import { useSideDrawer } from 'src/hooks/useSideDrawer';
 
 // style
-import styled from '@emotion/styled';
+import { styles } from 'src/components/common/header/styles.css';
+
+// images
 import blackLogo from 'public/images/BLACK_LOGO.png';
 import whiteLogo from 'public/images/WHITE_LOGO.png';
 
@@ -18,59 +19,23 @@ import whiteLogo from 'public/images/WHITE_LOGO.png';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export function Header({ isActive, isSpecified, color, BlackPainted = true }) {
-  const isDisplay = isActive ? 'is_display' : 'is_not_display';
+export function Header({ isOpposite, BlackPainted = true }) {
+  const menuIcon = isOpposite ? styles.menuWhiteIcon : styles.menuBlackIcon;
   const { open, handleDrawer } = useSideDrawer();
 
   const logo = BlackPainted ? blackLogo : whiteLogo;
 
   return (
     <>
-      <StyledHeader className={isDisplay} props={{ isSpecified, color }}>
+      <header className={isHeaderDisplay}>
         <Link href={'/'}>
-          <Image src={logo} alt='logo' className='logo' />
+          <Image src={logo} alt='logo' className={styles.logo} />
         </Link>
-        <IconButton color='inherit' aria-label='open drawer' className='icon_button' onClick={handleDrawer}>
-          <MenuIcon className='menu-icon' />
+        <IconButton color='inherit' aria-label='open drawer' className={styles.iconButton} onClick={handleDrawer}>
+          <MenuIcon className={menuIcon} />
         </IconButton>
-      </StyledHeader>
+      </header>
       <SideDrawer handleDrawer={handleDrawer} open={open} />
     </>
   );
 }
-
-const StyledHeader = styled('header')`
-  .is_display {
-    opacity: 1;
-  }
-
-  .is_not_display {
-    opacity: 0;
-  }
-
-  .logo {
-    position: fixed;
-    max-width: 200px;
-    height: auto;
-    padding: 16px;
-    z-index: 1;
-  }
-  .icon_button {
-    position: fixed;
-    right: 0;
-    padding: 12px;
-    z-index: 1;
-    .menu-icon {
-      font-size: 3rem;
-      color: ${({ props }) => (props.isSpecified ? props.color : `#333333`)};
-    }
-  }
-  @media screen and (max-width: 428px) {
-    .logo {
-      padding: 16px 8px;
-    }
-    .icon_button {
-      padding: 16px;
-    }
-  }
-`;
