@@ -1,29 +1,28 @@
 import { style } from '@vanilla-extract/css';
 
 export const styles = {
-  isDisplay: style({
-    opacity: 1,
-  }),
-  isNotDisplay: style({
-    opacity: 0,
+  container: style({
+    position: 'fixed',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    boxShadow: '0 0 1px 0 #333',
+    zIndex: 10,
   }),
   logo: style({
-    position: 'fixed',
     maxWidth: '200px',
     height: 'auto',
-    padding: '16px 8px',
-    zIndex: 1,
+    padding: '16px',
     '@media': {
       'screen and (min-width: 428px)': {
-        padding: '16px',
+        padding: '12px',
       },
     },
   }),
   iconButton: style({
-    position: 'fixed',
-    right: 0,
     padding: '16px',
-    zIndex: 1,
     '@media': {
       'screen and (min-width: 428px)': {
         padding: '12px',

@@ -27,15 +27,14 @@ import { isTopImageOnScreenAtom } from 'src/atoms/displayHeader';
 
 export function Header({ isOpposite, BlackPainted = true }) {
   const isTopImageOnScreen = useAtomValue(isTopImageOnScreenAtom);
-  const isHeaderDisplay = isTopImageOnScreen ? styles.isNotDisplay : styles.isDisplay;
   const menuIcon = isOpposite ? styles.menuWhiteIcon : styles.menuBlackIcon;
   const { open, handleDrawer } = useSideDrawer();
 
   const logo = BlackPainted ? blackLogo : whiteLogo;
 
-  return (
+  return isTopImageOnScreen ? null : (
     <>
-      <header className={isHeaderDisplay}>
+      <header className={styles.container}>
         <Link href={'/'}>
           <Image src={logo} alt='logo' className={styles.logo} />
         </Link>
