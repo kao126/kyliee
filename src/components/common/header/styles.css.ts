@@ -3,6 +3,7 @@ import { style } from '@vanilla-extract/css';
 export const styles = {
   container: style({
     position: 'fixed',
+    top: 0,
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
