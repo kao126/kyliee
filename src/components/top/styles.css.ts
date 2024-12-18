@@ -2,14 +2,14 @@ import { style } from '@vanilla-extract/css';
 
 export const styles = {
   topImage: style({
+    display: 'block',
     width: '100%',
     height: '100vh',
     objectFit: 'cover',
+    marginBottom: '2rem',
     '@media': {
       'screen and (min-width: 600px)': {
-        display: 'block',
         objectFit: 'contain',
-        marginBottom: '50px',
       },
     },
   }),

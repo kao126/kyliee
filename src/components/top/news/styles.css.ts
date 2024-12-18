@@ -49,5 +49,5 @@ export const styles = {
 };
 
 globalStyle('#news', {
-  margin: '50px 0',
+  margin: '2rem 0',
 });
