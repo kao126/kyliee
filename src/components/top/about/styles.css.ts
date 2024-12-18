@@ -23,14 +23,12 @@ export const styles = {
     },
   }),
   title: style({
-    fontSize: '45px',
     letterSpacing: '0.03em',
     lineHeight: '1.3',
     margin: '0',
     color: '#333333',
     '@media': {
       'screen and (min-width: 600px)': {
-        fontSize: '7vw',
         letterSpacing: '0.12em',
       },
     },

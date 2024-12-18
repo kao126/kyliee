@@ -1,6 +1,7 @@
 'use client';
 
 import 'swiper/swiper-bundle.css';
+import '../styles/globals.css';
 // components
 import { Header } from 'src/components/common/header';
 import { Footer } from 'src/components/common/footer';

@@ -2,7 +2,6 @@ import { style, globalStyle } from '@vanilla-extract/css';
 
 export const styles = {
   titleWrapper: style({
-    marginTop: '30px',
     textAlign: 'center',
     borderBottom: '3px solid #ccc',
     letterSpacing: '0.1rem',
@@ -50,5 +49,5 @@ export const styles = {
 };
 
 globalStyle('#news', {
-  margin: '50px 0 80px',
+  margin: '50px 0',
 });

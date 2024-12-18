@@ -11,7 +11,7 @@ export function TopAbout() {
     <div id='about'>
       <Image src={aboutImage} alt='About' aria-hidden='true' className={styles.img} />
       <div className={styles.content}>
-        <h2 className={styles.title}>ABOUT</h2>
+        <h1 className={styles.title}>ABOUT</h1>
         <div className={styles.description}>経歴・趣味・スキルについて</div>
         <div className={styles.viewMoreWrapper}>
           <Link href={'/about'}>

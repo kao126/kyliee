@@ -7,7 +7,9 @@ export const styles = {
     objectFit: 'cover',
     '@media': {
       'screen and (min-width: 600px)': {
+        display: 'block',
         objectFit: 'contain',
+        marginBottom: '50px',
       },
     },
   }),

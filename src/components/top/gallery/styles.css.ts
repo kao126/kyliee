@@ -2,7 +2,6 @@ import { style, globalStyle } from '@vanilla-extract/css';
 
 export const styles = {
   titleWrapper: style({
-    fontSize: '7vw',
     color: '#333333',
     letterSpacing: ' 0.03em',
     textAlign: 'center',

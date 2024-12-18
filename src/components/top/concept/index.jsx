@@ -11,7 +11,7 @@ export function TopConcept() {
     <div id='concept'>
       <Image src={conceptImage} alt='Concept' aria-hidden='true' className={styles.img} />
       <div className={styles.content}>
-        <h2 className={styles.title}>CONCEPT</h2>
+        <h1 className={styles.title}>CONCEPT</h1>
         <div className={styles.description}>このポートフォリオについて</div>
         <div className={styles.viewMoreWrapper}>
           <Link href={'/concept'}>
