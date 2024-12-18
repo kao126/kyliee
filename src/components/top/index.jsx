@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 // components
 import { Sns } from 'src/components/top/sns';
-import { Carousel } from 'src/components/common/carousel';
 import { TopNews } from 'src/components/top/news';
 import { TopAbout } from 'src/components/top/about';
 import { TopConcept } from 'src/components/top/concept';
@@ -39,7 +38,6 @@ export function Top() {
   return (
     <div>
       <Sns />
-      {/* <Carousel /> */}
       <Image ref={ref} src={topImage} alt='トップ画像' className={styles.topImage} />
       <div className={styles.topComponents}>
         <TopNews />

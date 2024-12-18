@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 // components
-import { GalleryCarousel } from 'src/components/common/carousel/galleryCarousel';
+import { Carousel } from 'src/components/common/carousel';
 
 // style
 import { styles } from 'src/components/top/gallery/styles.css';
@@ -13,7 +13,7 @@ export function TopGallery() {
       <div className='contents'>
         <h1 className={styles.titleWrapper}>GALLERY</h1>
         <div className={styles.description}>ギャラリーの説明</div>
-        <GalleryCarousel />
+        <Carousel />
         <Link href={'/gallery'} className={styles.viewMore}>
           VIEW MORE
         </Link>

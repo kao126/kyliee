@@ -5,32 +5,37 @@ import Image from 'next/image';
 // Swiper
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Pagination, Scrollbar, Autoplay, EffectFade } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-fade';
 
-// // style
+// images
 import styled from '@emotion/styled';
 import Image1 from 'public/images/01.webp';
 import Image2 from 'public/images/02.jpg';
 import Image3 from 'public/images/03.webp';
+import NoImage from 'public/images/NO_IMAGE.jpg';
 
 const images = [Image1, Image2, Image3];
 
 export function Carousel() {
-
   return (
     <Swiper
-      modules={[Pagination, Scrollbar, Autoplay]}
+      modules={[Pagination, Scrollbar, Autoplay, EffectFade]}
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      // scrollbar={{ draggable: true }}
       autoplay={{
-        delay: 4000,
+        delay: 2500,
+        disableOnInteraction: true,
       }}
+      speed={3000}
+      effect='fade'
+      fadeEffect={{ crossFade: true }}
       loop={true}
     >
       {images.map((image, i) => {
@@ -45,16 +50,12 @@ export function Carousel() {
 }
 
 const StyledImage = styled(Image)`
-  height: 100vh;
-  object-fit: cover;
-  object-position: top;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: auto;
     object-position: center;
-  }
-  @media screen and (max-width: 428px) {
-    height: 100vh;
-    object-position: right -280px top 0px;
   }
 `;

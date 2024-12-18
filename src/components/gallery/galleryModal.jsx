@@ -35,9 +35,6 @@ const GalleryModal = ({ open, handleModal, galleryData }) => {
         </div>
       </StyledWrapper>
     </Modal>
-    //   <Modal open={open} onClose={handleModal}>
-    //       <TempCarousel />
-    // </Modal>
   );
 };
 
