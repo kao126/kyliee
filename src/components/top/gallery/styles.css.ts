@@ -16,6 +16,9 @@ export const styles = {
   description: style({
     textAlign: 'center',
   }),
+  carousel: style({
+    margin: '2rem 0',
+  }),
   viewMore: style({
     position: 'absolute',
     width: '120px',
