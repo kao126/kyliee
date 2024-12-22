@@ -8,9 +8,15 @@ export const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    zIndex: 10,
+  }),
+  transparentBg: style({
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+  }),
+  whiteBg: style({
     backgroundColor: '#fff',
     boxShadow: '0 0 1px 0 #333',
-    zIndex: 10,
   }),
   logo: style({
     maxWidth: '200px',

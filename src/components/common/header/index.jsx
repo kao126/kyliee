@@ -1,6 +1,7 @@
 // Next.js
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // components
 import { SideDrawer } from 'src/components/common/sideDrawer';
@@ -24,17 +25,29 @@ import { useAtomValue } from 'jotai';
 
 // atom
 import { isTopImageOnScreenAtom } from 'src/atoms/displayHeader';
+import { useEffect, useState } from 'react';
 
-export function Header({ isOpposite, BlackPainted = true }) {
+export function Header() {
+  const pathname = usePathname();
   const isTopImageOnScreen = useAtomValue(isTopImageOnScreenAtom);
-  const menuIcon = isOpposite ? styles.menuWhiteIcon : styles.menuBlackIcon;
+  const [isWhiteLogo, setIsWhiteLogo] = useState(false);
+  const menuIcon = isWhiteLogo ? styles.menuWhiteIcon : styles.menuBlackIcon;
+  const headerBg = isWhiteLogo ? styles.transparentBg : styles.whiteBg;
   const { open, handleDrawer } = useSideDrawer();
 
-  const logo = BlackPainted ? blackLogo : whiteLogo;
+  const logo = isWhiteLogo ? whiteLogo : blackLogo;
+
+  useEffect(() => {
+    if (pathname == '/concept') {
+      setIsWhiteLogo(true);
+    } else {
+      setIsWhiteLogo(false);
+    }
+  }, [pathname]);
 
   return isTopImageOnScreen ? null : (
     <>
-      <header className={styles.container}>
+      <header className={`${styles.container} ${headerBg}`}>
         <Link href={'/'}>
           <Image src={logo} alt='logo' className={styles.logo} />
         </Link>
