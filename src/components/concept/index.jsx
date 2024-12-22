@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 // styles
 import { styles } from 'src/components/concept/styles.css';
+
+// images
 import conceptImage from 'public/images/CONCEPT.jpg';
 
 export function Concept() {

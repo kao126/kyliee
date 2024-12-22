@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+// React.js
+import { useEffect, useState } from 'react';
+
 // components
 import { SideDrawer } from 'src/components/common/sideDrawer';
 
@@ -25,7 +28,6 @@ import { useAtomValue } from 'jotai';
 
 // atom
 import { isTopImageOnScreenAtom } from 'src/atoms/displayHeader';
-import { useEffect, useState } from 'react';
 
 export function Header() {
   const pathname = usePathname();
