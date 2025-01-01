@@ -23,7 +23,7 @@ export const styles = {
     height: 'auto',
     padding: '16px',
     '@media': {
-      'screen and (min-width: 428px)': {
+      'screen and (min-width: 600px)': {
         padding: '12px',
       },
     },
@@ -31,7 +31,7 @@ export const styles = {
   iconButton: style({
     padding: '16px',
     '@media': {
-      'screen and (min-width: 428px)': {
+      'screen and (min-width: 600px)': {
         padding: '12px',
       },
     },

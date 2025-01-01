@@ -50,7 +50,7 @@ export const styles = {
       'screen and (min-width: 1024px)': {
         marginBottom: '80px',
       },
-      'screen and (min-width: 428px)': {
+      'screen and (min-width: 600px)': {
         marginTop: '180px',
       },
     },

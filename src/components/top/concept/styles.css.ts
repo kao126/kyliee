@@ -45,31 +45,31 @@ export const styles = {
     color: ' #333333',
     paddingBottom: '5px',
     borderBottom: '1px solid #abbcc1',
-    overflow: 'hidden',
-    selectors: {
-      '&::before': {
-        position: 'absolute',
-        content: "''",
-        width: '120%',
-        height: '100%',
-        backgroundColor: '#efefef',
-        left: '0',
-        transition: 'transform 0.5s',
-        transformOrigin: 'right top',
-        transform: 'skewX(-30deg) scale(0, 1)',
-        zIndex: '-1',
-      },
-      '&:hover::before': {
-        transformOrigin: 'left top',
-        transform: 'skewX(-30deg) scale(1, 1)',
-      },
-    },
     '@media': {
       'screen and (min-width: 600px)': {
         position: 'absolute',
         bottom: '0',
         right: '65%',
         transform: 'translateX(50%)',
+        overflow: 'hidden',
+        selectors: {
+          '&::before': {
+            position: 'absolute',
+            content: "''",
+            width: '120%',
+            height: '100%',
+            backgroundColor: '#efefef',
+            left: '0',
+            transition: 'transform 0.5s',
+            transformOrigin: 'right top',
+            transform: 'skewX(-30deg) scale(0, 1)',
+            zIndex: '-1',
+          },
+          '&:hover::before': {
+            transformOrigin: 'left top',
+            transform: 'skewX(-30deg) scale(1, 1)',
+          },
+        },
       },
       'screen and (min-width: 1024px)': {
         right: '60%',
