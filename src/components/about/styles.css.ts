@@ -5,8 +5,9 @@ export const styles = {
     width: '100%',
     paddingTop: '80px',
     textAlign: 'center',
+    margin: '4rem 0',
     '@media': {
-      'screen and (min-width: 768px)': {
+      'screen and (min-width: 1024px)': {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'start',
@@ -15,18 +16,25 @@ export const styles = {
     },
   }),
   imgWrapper: style({
-    width: '45%',
-    textAlign: 'center',
+    marginBottom: '1.5rem',
+    '@media': {
+      'screen and (min-width: 1024px)': {
+        width: '45%',
+        textAlign: 'center',
+        marginBottom: '0',
+      },
+    },
   }),
   img: style({
-    width: '100%',
+    width: '80%',
+    height: 'auto',
+    borderRadius: '50%',
     '@media': {
-      'screen and (min-width: 768px)': {
-        width: '80%',
+      'screen and (min-width: 600px)': {
+        width: '30%',
       },
       'screen and (min-width: 1024px)': {
         width: '100%',
-        borderRadius: '50%',
       },
     },
   }),
