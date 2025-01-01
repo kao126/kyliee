@@ -19,6 +19,7 @@ export const styles = {
     boxShadow: '0 0 1px 0 #333',
   }),
   logo: style({
+    display: 'block',
     maxWidth: '200px',
     height: 'auto',
     padding: '16px',
