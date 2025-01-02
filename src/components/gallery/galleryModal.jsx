@@ -2,11 +2,29 @@
 import styled from '@emotion/styled';
 import { Modal } from '@mui/material';
 import React from 'react';
-import NoImage from 'public/images/NO_IMAGE.jpg';
-import { TempCarousel } from 'src/components/common/carousel/tempCarousel';
+import { Carousel } from 'src/components/common/carousel';
 import Link from 'next/link';
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
+// images
+import Image1 from 'public/images/01.webp';
+import Image2 from 'public/images/02.jpg';
+import Image3 from 'public/images/03.webp';
+
+const images = [Image1, Image2, Image3];
+
+// plugin
+import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
+
+const carouselProps = {
+  modules: [Pagination, Autoplay, FreeMode],
+  pagination: { clickable: true },
+  autoplay: {
+    delay: 4000,
+  },
+  loop: true,
+};
 
 const GalleryModal = ({ open, handleModal, galleryData }) => {
   // データを違うファイルにまとめてidなどで判別してモーダルは共通化する
@@ -29,9 +47,8 @@ const GalleryModal = ({ open, handleModal, galleryData }) => {
             <GitHubIcon />
           </Link>
         </div>
-        <div className="img-wrapper">
-          {/* <img src={NoImage.src} alt='イメージ画像' className='img' /> */}
-          <TempCarousel />
+        <div className='img-wrapper'>
+          <Carousel images={images} {...carouselProps} />
         </div>
       </StyledWrapper>
     </Modal>
