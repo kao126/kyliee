@@ -35,12 +35,12 @@ const galleryDataLists = [
 ];
 
 export function Gallery() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [galleryData, setGalleryData] = useState(null);
-  const handleModal = (id) => {
-    const targetGalleryData = galleryDataLists.find((data) => data.id === id);
+  const handleModal = (dataId) => {
+    const targetGalleryData = galleryDataLists.find((data) => data.id === dataId);
     setGalleryData(targetGalleryData);
-    setOpen((prevOpen) => !prevOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (
@@ -48,25 +48,19 @@ export function Gallery() {
       <div className={styles.container}>
         <h1 className={styles.title}>Galley</h1>
         <Grid2 container>
-          <Grid2 size={{ xs: 12, md: 6 }}>
-            <div className={styles.item}>
-              <img src={NoImage.src} className={styles.img} alt='イメージ画像' />
-              <Box className={styles.gallery} onClick={() => handleModal(1)}>
-                <p className={styles.itemTitle}>Kn_Bn</p>
-              </Box>
-            </div>
-          </Grid2>
-          <Grid2 size={{ xs: 12, md: 6 }}>
-            <div className={styles.item}>
-              <img src={NoImage.src} className={styles.img} alt='イメージ画像' />
-              <Box className={styles.gallery} onClick={() => handleModal(2)}>
-                <p className={styles.itemTitle}>タイトル１</p>
-              </Box>
-            </div>
-          </Grid2>
+          {galleryDataLists.map((galleryData) => (
+            <Grid2 size={{ xs: 12, md: 6 }} key={galleryData.id}>
+              <div className={styles.item}>
+                <img src={NoImage.src} className={styles.img} alt={galleryData.title} />
+                <Box className={styles.gallery} onClick={() => handleModal(galleryData.id)}>
+                  <p className={styles.itemTitle}>{galleryData.title}</p>
+                </Box>
+              </div>
+            </Grid2>
+          ))}
         </Grid2>
       </div>
-      {galleryData && <GalleryModal open={open} handleModal={handleModal} galleryData={galleryData} />}
+      {galleryData && <GalleryModal open={isOpen} handleModal={handleModal} galleryData={galleryData} />}
     </>
   );
 }
