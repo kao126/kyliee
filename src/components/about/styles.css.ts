@@ -3,15 +3,13 @@ import { style } from '@vanilla-extract/css';
 export const styles = {
   container: style({
     width: '100%',
-    paddingTop: '80px',
     textAlign: 'center',
-    margin: '4rem 0',
     '@media': {
       'screen and (min-width: 1024px)': {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'start',
-        padding: '150px 40px 40px',
+        padding: '0 4rem',
       },
     },
   }),

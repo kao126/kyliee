@@ -20,11 +20,11 @@ export const styles = {
   container: style({
     width: '80%',
     maxWidth: '1140px',
-    margin: '4rem auto',
+    margin: '0 auto',
   }),
   title: style({
     textAlign: 'center',
-    padding: '40px 0',
+    paddingBottom: '1rem',
   }),
   item: style({
     position: 'relative',

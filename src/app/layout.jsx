@@ -31,10 +31,10 @@ export default function RootLayout({ emotionCache = clientSideEmotionCache, chil
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <html lang='ja'>
-          <body>
+          <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100dvh' }}>
             <Providers>
               <Header />
-              <main>{children}</main>
+              <main style={{ flex: 'auto' }}>{children}</main>
               <Footer />
             </Providers>
           </body>

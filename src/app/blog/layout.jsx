@@ -1,7 +1,10 @@
+// components
+import { PageContainer } from 'src/components/common/pageContainer';
+
 export const metadata = {
   title: 'Blog',
-}
+};
 
 export default function BlogLayout({ children }) {
-  return <section>{children}</section>;
+  return <PageContainer>{children}</PageContainer>;
 }

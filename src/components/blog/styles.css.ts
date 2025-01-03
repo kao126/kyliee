@@ -2,13 +2,13 @@ import { style } from '@vanilla-extract/css';
 
 export const styles = {
   container: style({
-    margin: '4rem 0',
+    margin: '0 auto',
   }),
   title: style({
     maxWidth: '1200px',
     margin: '0 auto',
     textAlign: 'center',
-    padding: '40px 0',
+    paddingBottom: '1rem',
   }),
   gridContainer: style({
     maxWidth: '1200px',
