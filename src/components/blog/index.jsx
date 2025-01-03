@@ -47,7 +47,7 @@ export function Blog() {
             <Typography>
               <time dateTime={`${formatDate(new Date(article.pubDate), 'yyyy-MM-dd')}`}>{formatDate(new Date(article.pubDate), 'yyyy.MM.dd')}</time>
             </Typography>
-            <Link href={`${article.link}`} className={styles.link}>
+            <Link href={`${article.link}`} className={styles.link} rel='noopener noreferrer' target='_blank'>
               ＋ 本文を読む
             </Link>
           </Grid2>
