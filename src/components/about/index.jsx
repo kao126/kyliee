@@ -1,9 +1,17 @@
 // Next.js
 import Image from 'next/image';
+import Link from 'next/link';
 
 // styles
 import { styles } from 'src/components/about/styles.css';
+
+// images
 import selfImage from 'public/images/about.jpg';
+import Wantedly from 'public/images/Wantedly_B.png';
+
+// Material-Ui
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export function About() {
   return (
@@ -74,6 +82,20 @@ export function About() {
                 <p>Adobe illustrator, Adobe Photoshop</p>
               </li>
             </ul>
+          </div>
+        </div>
+        <div>
+          <p className={styles.bold}>SNS</p>
+          <div className={styles.snsWrapper}>
+            <Link href={'https://www.linkedin.com/in/kanaru-oshima'} rel='noopener noreferrer' target='_blank'>
+              <LinkedInIcon className={styles.linkedin} />
+            </Link>
+            <Link href={'https://github.com/kao126'} rel='noopener noreferrer' target='_blank'>
+              <GitHubIcon className={styles.github} />
+            </Link>
+            <Link href={'https://www.wantedly.com/id/kanaru_oshima'} rel='noopener noreferrer' target='_blank'>
+              <Image src={Wantedly} alt='wantedly' className={styles.wantedly} />
+            </Link>
           </div>
         </div>
       </div>

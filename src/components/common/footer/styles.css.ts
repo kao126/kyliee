@@ -12,18 +12,4 @@ export const styles = {
     color: '#fff',
     margin: '0 5px',
   }),
-  github: style({
-    color: '#fff',
-    fontSize: '38px',
-    margin: '0 5px',
-  }),
-  wantedly: style({
-    width: '56px',
-    height: 'auto',
-  }),
-  linkedin: style({
-    color: '#fff',
-    fontSize: '42px',
-    margin: '0 5px',
-  }),
 };

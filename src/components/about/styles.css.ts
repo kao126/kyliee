@@ -71,4 +71,24 @@ export const styles = {
     margin: '0',
     paddingLeft: '1.5rem',
   }),
+  snsWrapper: style({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '2%',
+  }),
+  github: style({
+    // color: '#fff',
+    fontSize: '38px',
+    margin: '0 5px',
+  }),
+  wantedly: style({
+    width: '56px',
+    height: 'auto',
+  }),
+  linkedin: style({
+    // color: '#fff',
+    fontSize: '42px',
+    margin: '0 5px',
+  }),
 };
